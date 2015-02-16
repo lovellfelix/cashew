@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="dpd.js"></script>
+	<title>Deployd login form</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
 </head>
 <body>
-	<h1>Welcome to Deployd!</h1>
-	<p>You've just created a Deployd app. You can add front-end files in the <code>public</code> folder.</p>
-	<p>If you're new to Deployd, have a look at the <a href="http://docs.deployd.com/docs/getting-started/what-is-deployd.md">Getting Started Guide</a> or <a href="http://docs.deployd.com/docs/getting-started/your-first-api.md">Hello World Tutorial</a>.</p>
+  <div class="container">
+  	<h1>Login</h1>
+  	<form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" />
+      <label for="password">Password:</label>
+      <input type="password" id="password" /><br />
+      <button type="submit" class="btn btn-primary">Login</button>
+      <a href="/register.html" class="btn btn-link">sign up</a>
+    </form>
+  </div>
+  <script type="text/javascript" src="/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="/dpd.js"></script>
+  <script type="text/javascript">
+    dpd.users.me(function(user) {
+      if (user) {
+        location.href = "/welcome.html";
+      }
+    });
+
+    $('form').submit(function() {
+      var username = $('#username').val();
+      var password = $('#password').val();
+
+      dpd.users.login({username: username, password: password}, function(session, error) {
+        if (error) {
+          alert(error.message);
+        } else {
+          location.href = "/welcome.html";
+        }
+      });
+
+      return false;
+    });
+  </script>
 </body>
 </html>

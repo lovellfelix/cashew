@@ -1,0 +1,16 @@
+{
+  "name": "cashew",
+  "version": "0.0.1-alpha",
+  "authors": [
+    "Lovell Felix <hello@lovellfelix.com>"
+  ],
+  "license": "MIT",
+  "homepage": "http://lovellfelix.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/lib",
+    "test",
+    "tests"
+  ]
+}
