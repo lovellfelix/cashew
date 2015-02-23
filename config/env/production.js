@@ -1,13 +1,20 @@
 'use strict';
 
 module.exports = {
-  db: 'mongodb://' + (process.env.DB_PORT_27017_TCP_ADDR || 'localhost') + '/mean-prod',
+  db: 'mongodb://' + process.env.OPENSHIFT_MONGODB_DB_USERNAME + ':' + process.env.OPENSHIFT_MONGODB_DB_PASSWORD + '@' + process.env.OPENSHIFT_MONGODB_DB_HOST + ':' + process.env.OPENSHIFT_MONGODB_DB_PORT + '/' + process.env.OPENSHIFT_APP_NAME,
   /**
    * Database options that will be passed directly to mongoose.connect
    * Below are some examples.
    * See http://mongodb.github.io/node-mongodb-native/driver-articles/mongoclient.html#mongoclient-connect-options
    * and http://mongoosejs.com/docs/connections.html for more information
    */
+  
+  http: {
+        port: process.env.OPENSHIFT_NODEJS_PORT,
+  },
+  hostname: process.env.OPENSHIFT_NODEJS_IP,
+
+
   dbOptions: {
     /*
     server: {
