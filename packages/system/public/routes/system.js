@@ -35,7 +35,7 @@ angular.module('mean.system').provider('$meanState', ['$stateProvider', '$viewPa
         data.templateUrl = $viewPathProvider.path(data.templateUrl);
       }
       $stateProvider.state(stateName, data);
-      return this; 
+      return this;
     };
 
     this.$get = function() {
@@ -59,15 +59,8 @@ angular.module('mean.system').config(['$meanStateProvider', '$urlRouterProvider'
         templateUrl: 'system/views/index.html'
       });
   }
-]).config(['$locationProvider', 
+]).config(['$locationProvider',
   function($locationProvider) {
-  //  $locationProvider.html5Mode({
-  //  enabled: true,
-  //  requireBase: false
-  //});
-
-  ///$locationProvider.hashPrefix('!');
-  $locationProvider.hashPrefix('!');
-
- }
+    $locationProvider.hashPrefix('!');
+  }
 ]);
