@@ -9,3 +9,9 @@ angular.module('mean.default-theme').controller('DefaultThemeController', ['$sco
     };
   }
 ]);
+
+
+angular.module('mean.default-theme', ['mean.system'])
+.config(['$viewPathProvider', function($viewPathProvider) {
+  $viewPathProvider.override('system/views/index.html', 'default-theme/views/homepage.html');
+}]);
