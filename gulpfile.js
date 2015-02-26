@@ -9,9 +9,9 @@ var del = require('del'),
     karma = require('karma').server,
     plugins = gulpLoadPlugins(),
     paths = {
-      js: ['*.js', 'test/**/*.js', '!test/coverage/**', '!bower_components/**', 'packages/**/*.js', '!packages/**/node_modules/**', '!packages/contrib/**/*.js', '!packages/contrib/**/node_modules/**'],
+      js: ['*.js', 'test/**/*.js', '!test/coverage/**', '!bower_components/**', 'packages/**/*.js', '!packages/**/node_modules/**', '!packages/custom/**/public/assets/lib/**', '!packages/contrib/**/*.js', '!packages/contrib/**/node_modules/**'],
       html: ['packages/**/public/**/views/**', 'packages/**/server/views/**'],
-      css: ['!bower_components/**', 'packages/**/public/**/css/*.css', '!packages/contrib/**/public/**/css/*.css'],
+      css: ['!bower_components/**', 'packages/**/public/**/css/*.css', '!packages/contrib/**/public/**/css/*.css', '!packages/custom/**/public/assets/lib/**'],
       less: ['**/public/**/css/*.less']
     },
     assets = require('./config/assets.json'),
