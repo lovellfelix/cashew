@@ -28,6 +28,29 @@ DefaultTheme.register(function(system, app, auth, database) {
 
   DefaultTheme.aggregateAsset('css', 'defaultTheme.css');
 
+  DefaultTheme.aggregateAsset('css', '../lib/angular-material/angular-material.css', {
+      absolute: false,
+      global: true
+  });
+
+  DefaultTheme.aggregateAsset('js', '../lib/angular-aria/angular-aria.js', {
+      absolute: false,
+      global: true
+  });
+
+  DefaultTheme.aggregateAsset('js', '../lib/angular-animate/angular-animate.js', {
+      absolute: false,
+      global: true
+  });
+
+    DefaultTheme.aggregateAsset('js', '../lib/angular-material/angular-material.js', {
+      absolute: false,
+      global: true
+  });
+
+
+  DefaultTheme.angularDependencies(['ngMaterial']);
+
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
     // Save settings with callback
