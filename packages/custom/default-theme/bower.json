@@ -1,5 +1,8 @@
 {
   "name": "default-theme",
   "version": "0.0.1",
-  "dependencies": {}
+  "dependencies": {
+    "angular-material": "~0.8.1",
+    "lumx": "~0.3.17"
+  }
 }
