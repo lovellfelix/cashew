@@ -19,14 +19,19 @@
 
   <div layout="row" flex>
     <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-close="$media('gt-sm')">
-      {% if adminEnabled %}
-      <section class="admin-menu">
-          <div data-ng-include="'/mean-admin/views/index.html'"></div>
+      
+      <section class="">
+          <div data-ng-include="'/default-theme/views/sidebar.html'"></div>
+          {% if adminEnabled %}
+          <div data-ng-include="'/default-theme/views/sidebar-admin.html'"></div>
+          {% endif %}
       </section>
-      {% endif %}
+      
 
 
     </md-sidenav>
+
+
     <div layout="column" flex id="content">
       <md-content layout="column" flex class="md-padding">
         {% block content %}{% endblock %}
