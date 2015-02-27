@@ -1,4 +1,4 @@
-<div class="page-header" data-ng-controller="HeaderController">
+<!--<div class="page-header" data-ng-controller="DefaultThemeController">
     <div class="logo pull-left">
         <a class="navbar-brand" ui-sref="home" mean-token="'site-title'">MEAN</a>
     </div>
@@ -11,7 +11,7 @@
         </ul>
     </div>
 
- 
+
   <div class="account">
     <div class="text-edit">
       <div class="pull-right" data-ng-show="global.authenticated" mean-token-editable></div>
@@ -38,3 +38,12 @@
     </ul>
   </div>
 </div>
+-->
+
+
+<md-toolbar layout="row" data-ng-controller="DefaultThemeController">
+  <button ng-click="toggleSidenav('left')"  class="menuBtn">
+    <span class="visually-hidden">Menu</span>
+  </button>
+  <h1>Hello World</h1>
+</md-toolbar>
