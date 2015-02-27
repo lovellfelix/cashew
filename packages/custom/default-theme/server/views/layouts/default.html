@@ -2,7 +2,9 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
 {% include '../includes/head.html' %}
 
-<body data-ng-controller="DefaultThemeController" ng-cloak class="ng-cloak" ng-class="state">
+<body layout="column" data-ng-controller="DefaultThemeController" ng-cloak class="ng-cloak" ng-class="state">
+  <div data-ng-include="'/default-theme/views/header.html'" data-role="navigation"></div>
+<!--<body data-ng-controller="DefaultThemeController" ng-cloak class="ng-cloak" ng-class="state">
     <div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/default-theme/views/header.html'" data-role="navigation"></div>
     {% if adminEnabled %}
     <section class="admin-menu">
@@ -13,8 +15,28 @@
         <section class="container">
             {% block content %}{% endblock %}
         </section>
-    </section>
-    {% include '../includes/foot.html' %}
+    </section>-->
+
+  <div layout="row" flex>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-close="$media('gt-sm')">
+      {% if adminEnabled %}
+      <section class="admin-menu">
+          <div data-ng-include="'/mean-admin/views/index.html'"></div>
+      </section>
+      {% endif %}
+
+
+    </md-sidenav>
+    <div layout="column" flex id="content">
+      <md-content layout="column" flex class="md-padding">
+        {% block content %}{% endblock %}
+
+      </md-content>
+    </div>
+  </div>
+
+
+  {% include '../includes/foot.html' %}
 </body>
 
 </html>

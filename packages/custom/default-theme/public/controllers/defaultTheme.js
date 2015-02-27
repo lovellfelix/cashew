@@ -11,10 +11,18 @@ app.config(['$viewPathProvider', function($viewPathProvider) {
   $viewPathProvider.override('users/views/forgot-password.html', 'default-theme/views/auth/forgot-password.html');
 }]);
 
-app.controller('DefaultThemeController', ['$scope', '$rootScope', 'Global', 'Menus',
-  function($scope, $rootScope, Global, Menus, DefaultTheme) {
+app.controller('DefaultThemeController', ['$scope', '$rootScope', '$mdSidenav', 'Global', 'Menus',
+  function($scope, $rootScope, $mdSidenav, Global, Menus, DefaultTheme) {
     $scope.global = Global;
     $scope.menus = {};
+
+    $scope.toggleSidenav = function(menuId) {
+      $mdSidenav(menuId).toggle();
+    };
+
+    $scope.toggleRight = function() {
+    $mdSidenav('right').toggle();
+  };
 
     // Default hard coded menu items for main menu
     var defaultMainMenu = [];
@@ -49,3 +57,11 @@ app.controller('DefaultThemeController', ['$scope', '$rootScope', 'Global', 'Men
 
   }
 ]);
+
+
+app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
+  $scope.toggleSidenav = function(menuId) {
+    $mdSidenav(menuId).toggle();
+  };
+
+}]);
