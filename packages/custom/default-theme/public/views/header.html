@@ -40,10 +40,38 @@
 </div>
 -->
 
+<!--<md-toolbar>
+   <div class="md-toolbar-tools" layout-align="space-between center">
+     <md-button ng-click="toggleSidenav('left')"  class="menuBtn">hi</md-button>
 
-<md-toolbar layout="row" data-ng-controller="DefaultThemeController">
+     <md-button>bottom stuff</md-button>
+   </div>
+ </md-toolbar>-->
+
+
+
+
+ <md-toolbar >
+         <div class="md-toolbar-tools"data-ng-controller="DefaultThemeController">
+           <button ng-click="toggleSidenav('left')"  class="menuBtn">
+             <span class="visually-hidden">Menu</span>
+           </button>
+
+
+           <span flex=""></span>
+
+
+           <i class="mdi mdi-email" ng-click="toggleRight()"></i>
+           <i class="mdi mdi-bell" ng-click="toggleRight()"></i>
+
+
+         </div>
+  </md-toolbar>
+
+
+<!--<md-toolbar layout="row" data-ng-controller="DefaultThemeController">
   <button ng-click="toggleSidenav('left')"  class="menuBtn">
     <span class="visually-hidden">Menu</span>
   </button>
-  <h1>Hello World</h1>
-</md-toolbar>
+  <h1 mean-token="'site-title'">{{appName}} - {{title}}</h1>
+</md-toolbar>-->

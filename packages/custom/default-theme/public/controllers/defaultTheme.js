@@ -1,4 +1,3 @@
-
 'use strict';
 
 var app = angular.module('mean.default-theme', ['mean.system', 'ngMaterial']);
@@ -21,8 +20,8 @@ app.controller('DefaultThemeController', ['$scope', '$rootScope', '$mdSidenav', 
     };
 
     $scope.toggleRight = function() {
-    $mdSidenav('right').toggle();
-  };
+      $mdSidenav('right').toggle();
+    };
 
     // Default hard coded menu items for main menu
     var defaultMainMenu = [];
@@ -42,7 +41,6 @@ app.controller('DefaultThemeController', ['$scope', '$rootScope', '$mdSidenav', 
     queryMenu('main', defaultMainMenu);
     queryMenu('account', []);
 
-
     $scope.isCollapsed = false;
 
     $rootScope.$on('loggedin', function() {
@@ -50,7 +48,7 @@ app.controller('DefaultThemeController', ['$scope', '$rootScope', '$mdSidenav', 
       queryMenu('main', defaultMainMenu);
 
       $scope.global = {
-        authenticated: !! $rootScope.user,
+        authenticated: !!$rootScope.user,
         user: $rootScope.user
       };
     });
@@ -58,10 +56,20 @@ app.controller('DefaultThemeController', ['$scope', '$rootScope', '$mdSidenav', 
   }
 ]);
 
-
-app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
-  $scope.toggleSidenav = function(menuId) {
-    $mdSidenav(menuId).toggle();
+app.controller('LeftCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  $scope.close = function() {
+    $mdSidenav('left').close()
+      .then(function() {
+        $log.debug('close LEFT is done');
+      });
   };
+});
 
-}]);
+app.controller('RightCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  $scope.close = function() {
+    $mdSidenav('right').close()
+      .then(function() {
+        $log.debug('close RIGHT is done');
+      });
+  };
+});

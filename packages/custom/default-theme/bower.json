@@ -2,7 +2,6 @@
   "name": "default-theme",
   "version": "0.0.1",
   "dependencies": {
-    "angular-material": "~0.8.1",
-    "mdi": "~0.9.22-alpha"
+    "angular-material": "~0.8.1"
   }
 }
