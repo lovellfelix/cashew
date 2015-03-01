@@ -1,17 +1,13 @@
-<div class="" data-ng-controller="DefaultThemeController">
 
-<p> Hello World</p>
-
-
-
-
-        <ul class="navbar-nav nav">
-            <li data-ng-repeat="item in menus.main" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-                <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
+<md-list data-ng-controller="DefaultThemeController">
+      <md-item data-ng-repeat="item in menus.main">
+        <md-item-content>
+          <ul class="list-unstyled">
+            <li  ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+              <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
             </li>
-        </ul>
-
-
-
-        
-</div>
+          </ul>
+        </md-item-content>
+      </md-item>
+    </md-list>
+  </md-content>
