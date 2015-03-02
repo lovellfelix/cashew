@@ -2,6 +2,8 @@
   "name": "default-theme",
   "version": "0.0.1",
   "dependencies": {
-    "angular-material": "~0.8.1"
+    "angular-timeago": "~0.1.9",
+    "angular-material": "~0.8.2",
+    "lumx": "~0.3.17"
   }
 }

@@ -40,41 +40,45 @@
 </div>
 -->
 
-<!--<md-toolbar>
-   <div class="md-toolbar-tools" layout-align="space-between center">
-     <md-button ng-click="toggleSidenav('left')"  class="menuBtn">hi</md-button>
-
-     <md-button>bottom stuff</md-button>
-   </div>
- </md-toolbar>-->
 
 
 
 
  <md-toolbar >
-         <div class="md-toolbar-tools" data-ng-controller="DefaultThemeController">
-           <button ng-click="toggleSidenav('left')"  class="menuBtn">
-             <span class="visually-hidden">Menu</span>
-           </button>
+         <div class="md-toolbar-tools " data-ng-controller="DefaultThemeController">
 
+           <span hide-md hide-sm show-gt-md><i class="icon icon--l icon--blue-grey icon--circled mdi mdi-city"></i></span>
+           <button ng-click="toggleSidenav('left')"  class="btn btn--l btn--black btn--icon" hide-gt-md lx-ripple>
+               <i class="mdi mdi-menu"></i>
+           </button>
 
            <span flex=""></span>
 
 
-           <i class="mdi mdi-email" ng-click="toggleRight()"></i>
-           <i class="mdi mdi-bell" ng-click="toggleRight()"></i>
-           <span class="mdi mdi-email"></span>
-           <span class="mdi mdi-email"></span>
+           <i class="mdi mdi-bell-outline" ng-click="toggleRight()"></i>
 
 
 
-         </div>
+ <lx-dropdown>
+     <button class="btn btn--m btn--black btn--flat tc-white-1" lx-ripple lx-dropdown-toggle>
+       <i class="mdi mdi-account" ng-click="toggleRight()"></i>
+ {{global.user.name}}
+     </button>
+
+     <lx-dropdown-menu>
+         <ul>
+             <li><a class="dropdown-link" ng-click="dropdownAlert()">Notification</a></li>
+             <li><a class="dropdown-link">Another action</a></li>
+             <li class="dropdown-divider"></li>
+             <li><span class="dropdown-link dropdown-link--is-header">Header</span></li>
+             <li><a class="dropdown-link">Separated link</a></li>
+         </ul>
+     </lx-dropdown-menu>
+ </lx-dropdown>
+
+
+
+
+
+    </div>
   </md-toolbar>
-
-
-<!--<md-toolbar layout="row" data-ng-controller="DefaultThemeController">
-  <button ng-click="toggleSidenav('left')"  class="menuBtn">
-    <span class="visually-hidden">Menu</span>
-  </button>
-  <h1 mean-token="'site-title'">{{appName}} - {{title}}</h1>
-</md-toolbar>-->

@@ -1,19 +1,31 @@
 'use strict';
 
-var app = angular.module('mean.default-theme', ['mean.system', 'ngMaterial']);
+/* jshint -W098 */
+var app = angular.module('mean.default-theme', ['mean.system', 'ngMaterial', 'lumx']);
 
 app.config(['$viewPathProvider', function($viewPathProvider) {
-  $viewPathProvider.override('system/views/index.html', 'default-theme/views/homepage.html');
+  $viewPathProvider.override('system/views/index.html', 'default-theme/views/index.html');
   $viewPathProvider.override('users/views/login.html', 'default-theme/views/auth/login.html');
   $viewPathProvider.override('users/views/register.html', 'default-theme/views/auth/register.html');
   $viewPathProvider.override('users/views/reset-password.html', 'default-theme/views/auth/reset-password.html');
   $viewPathProvider.override('users/views/forgot-password.html', 'default-theme/views/auth/forgot-password.html');
 }]);
 
-app.controller('DefaultThemeController', ['$scope', '$rootScope', '$mdSidenav', 'Global', 'Menus',
-  function($scope, $rootScope, $mdSidenav, Global, Menus, DefaultTheme) {
+
+app.controller('DefaultThemeController', ['$scope', '$rootScope', '$mdSidenav', 'Global', 'Menus', 'DefaultTheme',
+  function($scope, $rootScope, $mdSidenav, Global, Menus, DefaultTheme, nowTime) {
     $scope.global = Global;
     $scope.menus = {};
+
+    $scope.package = {
+      name: 'default-theme'
+    };
+
+  $scope.pageLoadTime = (new Date()).toISOString();
+  $scope.nowTime = nowTime;
+  $scope.nowTimeAsDateObejct = new Date();
+
+  $scope.date = new Date();
 
     $scope.toggleSidenav = function(menuId) {
       $mdSidenav(menuId).toggle();
