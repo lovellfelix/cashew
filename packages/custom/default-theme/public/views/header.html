@@ -41,44 +41,48 @@
 -->
 
 
+<md-toolbar>
+  <div class="md-toolbar-tools " data-ng-controller="DefaultThemeController">
+
+    <span hide-md hide-sm show-gt-md><i class="icon icon--l icon--blue-grey icon--circled mdi mdi-city"></i>
+    </span>
+    <button ng-click="toggleSidenav('left')" class="btn btn--l btn--black btn--icon" hide-gt-md lx-ripple>
+      <i class="mdi mdi-menu"></i>
+    </button>
+
+    <span flex=""></span>
 
 
+    <i class="mdi mdi-bell-outline" data-ng-show="global.authenticated" ng-click="toggleRight()"></i>
 
- <md-toolbar >
-         <div class="md-toolbar-tools " data-ng-controller="DefaultThemeController">
+    <button class="btn btn--m btn--black btn--flat tc-white-1" lx-ripple lx-dropdown-toggle data-ng-hide="global.authenticated">
+      <i class="mdi mdi-lock"></i>
+      <a ui-sref='auth.login'>Log In</a>
+    </button>
 
-           <span hide-md hide-sm show-gt-md><i class="icon icon--l icon--blue-grey icon--circled mdi mdi-city"></i></span>
-           <button ng-click="toggleSidenav('left')"  class="btn btn--l btn--black btn--icon" hide-gt-md lx-ripple>
-               <i class="mdi mdi-menu"></i>
-           </button>
+    <lx-dropdown data-ng-show="global.authenticated">
+      <button class="btn btn--m btn--black btn--flat tc-white-1" lx-ripple lx-dropdown-toggle>
+        <i class="mdi mdi-account" ng-click="toggleRight()"></i> {{global.user.name}}
+      </button>
 
-           <span flex=""></span>
+      <lx-dropdown-menu>
+        <ul>
+          <li><a class="dropdown-link" ng-click="dropdownAlert()">Notification</a>
+          </li>
+          <li><a class="dropdown-link">Another action</a>
+          </li>
+          <li class="dropdown-divider"></li>
+          <li>
+            <span class="dropdown-link dropdown-link--is-header">Header</span>
+          </li>
+          <li><a class="dropdown-link">Separated link</a>
+          </li>
+          <li class="dropdown-link" data-ng-repeat="item in menus.account" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+            <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
+          </li>
+        </ul>
+      </lx-dropdown-menu>
+    </lx-dropdown>
 
-
-           <i class="mdi mdi-bell-outline" ng-click="toggleRight()"></i>
-
-
-
- <lx-dropdown>
-     <button class="btn btn--m btn--black btn--flat tc-white-1" lx-ripple lx-dropdown-toggle>
-       <i class="mdi mdi-account" ng-click="toggleRight()"></i>
- {{global.user.name}}
-     </button>
-
-     <lx-dropdown-menu>
-         <ul>
-             <li><a class="dropdown-link" ng-click="dropdownAlert()">Notification</a></li>
-             <li><a class="dropdown-link">Another action</a></li>
-             <li class="dropdown-divider"></li>
-             <li><span class="dropdown-link dropdown-link--is-header">Header</span></li>
-             <li><a class="dropdown-link">Separated link</a></li>
-         </ul>
-     </lx-dropdown-menu>
- </lx-dropdown>
-
-
-
-
-
-    </div>
-  </md-toolbar>
+  </div>
+</md-toolbar>

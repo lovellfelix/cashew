@@ -7,7 +7,7 @@
 
   <div layout="row" flex>
 
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')" >
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')" data-ng-show="global.authenticated"  ng-cloak class="ng-cloak" ng-class="state">
 
         <md-content class="md-padding" ng-controller="LeftCtrl">
 
