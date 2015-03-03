@@ -30,7 +30,7 @@ DefaultTheme.register(function(system, app, auth, database) {
   DefaultTheme.aggregateAsset('css', '../lib/lumx/dist/lumx.css');
 
   DefaultTheme.aggregateAsset('js', '../lib/velocity/velocity.min.js');
-  DefaultTheme.aggregateAsset('js', '../lib/moment/min/moment-with-locales.mim.js');
+  DefaultTheme.aggregateAsset('js', '../lib/moment/min/moment-with-locales.min.js');
   DefaultTheme.aggregateAsset('js', '../lib/lumx/dist/lumx.min.js');
   DefaultTheme.aggregateAsset('js', '../lib/angular-aria/angular-aria.js');
   DefaultTheme.aggregateAsset('js', '../lib/angular-animate/angular-animate.js');
