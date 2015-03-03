@@ -1,10 +1,6 @@
 <div data-ng-controller="LoginCtrl">
-
-    <div class="alert alert-danger animated fadeIn" ng-show="loginerror">{{loginerror}}</div>
-
-    <h2>Login</h2>
-
-    <form id="login_form" ng-submit="login()">
+  <div class="alert alert-danger animated fadeIn" ng-show="loginerror">{{loginerror}}</div>
+  <!--<form id="login_form" ng-submit="login()">
         <div class="input-wrapper">
             <input required id="email_block" type="email" name="email" placeholder="Email Address" ng-model="user.email">
             <div class="error_message">Please enter a correct info #</div>
@@ -30,5 +26,31 @@
         <div class="woman_ninja_bottom">
             <img src="/theme/assets/img/woman_ninja.png" alt="#">
         </div>
-    </form>
-</div>
+    </form>-->
+  <div class="mt++" flex-container="row" flex-gutter="12">
+    <div flex-item>
+      <form id="login_form" ng-submit="login()">
+
+        <lx-text-field label="Email Address">
+          <input required type="email" ng-model="user.email">
+        </lx-text-field>
+
+        <lx-text-field label="Password">
+          <input required id="password_block" name="password" type="{{input.type}}" ng-model="user.password">
+        </lx-text-field>
+        <!--<span class="pic password {{input.iconClass}}" ng-click = "togglePasswordVisible()">
+                      <div class="hide_text_password">
+                          {{input.tooltipText}}
+                      </div>
+            </span>-->
+
+        <button type="submit" class="btn btn--m btn--blue btn--raised" lx-ripple>Login</button>
+
+      </form>
+      <br />
+      <span><a ui-sref='auth.register'>Create an account</a>
+      </span> |
+      <span><a ui-sref='forgot-password'>Forgot your password</a>
+      </span>
+    </div>
+  </div>

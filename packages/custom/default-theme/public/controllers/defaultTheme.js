@@ -5,6 +5,7 @@ var app = angular.module('mean.default-theme', ['mean.system', 'ngMaterial', 'lu
 
 app.config(['$viewPathProvider', function($viewPathProvider) {
   $viewPathProvider.override('system/views/index.html', 'default-theme/views/index.html');
+  $viewPathProvider.override('users/views/index.html', 'default-theme/views/auth/index.html');
   $viewPathProvider.override('users/views/login.html', 'default-theme/views/auth/login.html');
   $viewPathProvider.override('users/views/register.html', 'default-theme/views/auth/register.html');
   $viewPathProvider.override('users/views/reset-password.html', 'default-theme/views/auth/reset-password.html');
