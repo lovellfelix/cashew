@@ -18,13 +18,31 @@ Dashboard.register(function(app, auth, database) {
 
   //We are adding a link to the main menu for all authenticated users
   Dashboard.menus.add({
-    title: 'dashboard example page',
+    title: 'dashboard',
     link: 'dashboard example page',
     roles: ['authenticated'],
     menu: 'main'
   });
-  
+
   Dashboard.aggregateAsset('css', 'dashboard.css');
+
+  Dashboard.aggregateAsset('css', '../lib/angular-dashboard-framework/dist/angular-dashboard-framework.min.css');
+
+  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/core.js');
+  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/widget.js');
+  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/mouse.js');
+  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/sortable.js');
+
+  Dashboard.aggregateAsset('js', '../lib/angular-route/angular-route.js');
+  Dashboard.aggregateAsset('js', '../lib/angular-ui-sortable/sortable.js');
+  Dashboard.aggregateAsset('js', '../lib/angular-bootstrap/ui-bootstrap.js');
+  Dashboard.aggregateAsset('js', '../lib/angular-timeago/src/timeAgo.js');
+
+
+  Dashboard.aggregateAsset('js', '../lib/angular-dashboard-framework/dist/angular-dashboard-framework.min.js');
+
+
+  Dashboard.angularDependencies(['yaru22.angular-timeago']);
 
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
