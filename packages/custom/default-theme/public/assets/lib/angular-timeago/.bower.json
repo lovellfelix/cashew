@@ -33,6 +33,5 @@
   },
   "_source": "git://github.com/yaru22/angular-timeago.git",
   "_target": "~0.1.9",
-  "_originalSource": "angular-timeago",
-  "_direct": true
+  "_originalSource": "angular-timeago"
 }
