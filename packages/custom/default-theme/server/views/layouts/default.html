@@ -4,59 +4,34 @@
 
 <body layout="column" data-ng-controller="DefaultThemeController" ng-cloak class="ng-cloak" ng-class="state">
   <div data-ng-include="'/default-theme/views/header.html'" data-role="navigation"></div>
-
   <div layout="row" flex>
-
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')" data-ng-show="global.authenticated"  ng-cloak class="ng-cloak" ng-class="state">
-
-        <md-content class="md-padding" ng-controller="LeftCtrl">
-
-
-        <!--<i class="mdi mdi-keyboard-backspace" ng-click="close()"></i>-->
-
-
-
-
-            <section class="" ng-click="close()">
-                <div data-ng-include="'/default-theme/views/sidebar.html'"></div>
-                {% if adminEnabled %}
-                <div data-ng-include="'/default-theme/views/sidebar-admin.html'"></div>
-                {% endif %}
-            </section>
-
-
-
-        </md-content>
-      </md-sidenav>
-      <md-content flex class="md-padding">
-        <div layout="column" layout-fill>
-
-
-          {% block content %}{% endblock %}
-
-
-
-
-
-          </div>
-        </div>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" data-ng-show="global.authenticated" ng-cloak class="ng-cloak" ng-class="state">
+      <md-content class="md-padding" ng-controller="LeftCtrl">
+        <section class="" ng-click="close()">
+          <div data-ng-include="'/default-theme/views/sidebar.html'"></div>
+          {% if adminEnabled %}
+          <div data-ng-include="'/default-theme/views/sidebar-admin.html'"></div>
+          {% endif %}
+        </section>
       </md-content>
-      <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
-        <md-toolbar class="md-theme-light">
-          <h1 class="md-toolbar-tools">Sidenav Right</h1>
-        </md-toolbar>
-        <md-content ng-controller="RightCtrl" class="md-padding">
-          <md-button ng-click="close()" class="md-primary">
-            Close Sidenav Right
-          </md-button>
-        </md-content>
-      </md-sidenav>
-
-
-
+    </md-sidenav>
+    <md-content flex class="md-padding">
+      <div layout="column" layout-fill>
+        {% block content %}{% endblock %}
+      </div>
   </div>
-
-
+  </md-content>
+  <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+    <md-toolbar class="md-theme-light">
+      <h1 class="md-toolbar-tools">Sidenav Right</h1>
+    </md-toolbar>
+    <md-content ng-controller="RightCtrl" class="md-padding">
+      <md-button ng-click="close()" class="md-primary">
+        Close Sidenav Right
+      </md-button>
+    </md-content>
+  </md-sidenav>
+  </div>
   {% include '../includes/foot.html' %}
 </body>
 

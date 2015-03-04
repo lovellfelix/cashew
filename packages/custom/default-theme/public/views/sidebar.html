@@ -1,13 +1,37 @@
+<div flex-container="row" flex-gutter="24" flex-wrap data-ng-controller="DefaultThemeController">
 
-<md-list data-ng-controller="DefaultThemeController">
-      <md-item data-ng-repeat="item in menus.main">
-        <md-item-content>
-          <ul class="list-unstyled">
-            <li  ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-              <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
-            </li>
-          </ul>
-        </md-item-content>
-      </md-item>
-    </md-list>
-  </md-content>
+    <div flex-item="18">
+      <ul class="list">
+           <li class="list-row">
+               <div class="list-row__primary">
+                   <img src="https://lh3.googleusercontent.com/-Ubq3pEfgeLk/AAAAAAAAAAI/AAAAAAAAOvs/nGutWDQ5OGc/s120-c/photo.jpg.png" width="40" height="40" class="img-round">
+               </div>
+
+               <div class="list-row__content">
+                   <span class="display-block">{{global.user.name}}</span>
+                   <span class="display-block fs-body-1 tc-black-2">[Job Title]</span>
+               </div>
+
+               <div class="list-row__secondary">
+                   <i class="icon icon--xs icon--grey icon--flat mdi mdi-logout" lx-tooltip="Logout" tooltip-position="bottom"></i>
+               </div>
+           </li>
+        </ul>
+
+       <div class="divider divider--dark"></div>
+
+       <ul class="list mt+" data-ng-repeat="item in menus.main">
+           <li class="list-row list-row--has-separator" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+               <div class="list-row__primary">
+                   <i class="icon icon--s icon--grey icon--flat mdi mdi-send"></i>
+               </div>
+
+               <div class="list-row__content">
+                 <span><a class="sidebar-menu__link" mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a></span>
+               </div>
+           </li>
+       </ul>
+   </div>
+
+
+  </div>
