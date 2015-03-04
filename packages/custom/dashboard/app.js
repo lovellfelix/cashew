@@ -33,16 +33,16 @@ Dashboard.register(function(app, auth, database) {
   Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/mouse.js');
   Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/sortable.js');
 
-  Dashboard.aggregateAsset('js', '../lib/angular-route/angular-route.js');
   Dashboard.aggregateAsset('js', '../lib/angular-ui-sortable/sortable.js');
   Dashboard.aggregateAsset('js', '../lib/angular-bootstrap/ui-bootstrap.js');
+  Dashboard.aggregateAsset('js', '../lib/angular-local-storage/dist/angular-local-storage.js');
   Dashboard.aggregateAsset('js', '../lib/angular-timeago/src/timeAgo.js');
 
 
   Dashboard.aggregateAsset('js', '../lib/angular-dashboard-framework/dist/angular-dashboard-framework.min.js');
 
 
-  Dashboard.angularDependencies(['yaru22.angular-timeago']);
+  Dashboard.angularDependencies(['yaru22.angular-timeago', 'adf', 'LocalStorageModule']);
 
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above

@@ -1,6 +1,11 @@
 <div class="" data-ng-controller="DashboardController">
-  <h1>Example view from your new awesome package</h1>
+
   <h2>Package: {{package.name}}</h2>
+
+
+  <p>This is an ISO8601 String: {{ "2015-02-23T09:38:47.765Z" | timeAgo }}</p>
+
+
   <ol>
     <li>
       <a href="dashboard/example/anyone">Server route that anyone can access</a>
@@ -24,4 +29,3 @@
   <h3><a href="http://www.mean.io/#!/docs">Documentation</a></h3>
   </br>
 </div>
-
