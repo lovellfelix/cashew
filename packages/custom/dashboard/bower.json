@@ -1,0 +1,7 @@
+{
+  "name": "dashboard",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular-dashboard-framework": "git@github.com:sdorra/angular-dashboard-framework.git#~0.7.0"
+  }
+}
