@@ -30,6 +30,18 @@ angular.module('mean.dashboard').config(['$stateProvider',
       resolve: {
         loggedin: checkLoggedin
       }
+    })
+
+    .state('dashboard', {
+      url: '/dashboard',
+      templateUrl: 'dashboard/views/default.html'
+    })
+
+    .state('dashboard test', {
+      url: '/dashboard/:id',
+      templateUrl: 'dashboard/views/dashboard.html'
     });
+
+
   }
 ]);

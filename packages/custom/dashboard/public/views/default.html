@@ -1,0 +1,10 @@
+<h1>Default</h1>
+
+
+<ul class="">
+  <li ng-class="nav.navClass('boards/' + item.id)" ng-repeat="item in nav.items | orderBy: title">
+    <a ng-href="#/boards/{{item.id}}">{{item.title}}</a>
+  </li>
+  <li>
+    <a style="cursor: pointer;" ng-click="nav.create()">Create</a>
+  </li>

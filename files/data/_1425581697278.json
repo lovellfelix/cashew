@@ -1,0 +1,31 @@
+{
+  "title": "New Sample",
+  "structure": "4-8",
+  "rows": [
+    {
+      "columns": [
+        {
+          "styleClass": "col-md-4",
+          "widgets": [
+            {
+              "type": "randommsg",
+              "config": {},
+              "title": "Random Message"
+            },
+            {
+              "type": "linklist",
+              "config": {
+                "links": []
+              },
+              "title": "Links"
+            }
+          ]
+        },
+        {
+          "styleClass": "col-md-8",
+          "widgets": []
+        }
+      ]
+    }
+  ]
+}

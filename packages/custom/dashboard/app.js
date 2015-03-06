@@ -28,21 +28,24 @@ Dashboard.register(function(app, auth, database) {
 
   Dashboard.aggregateAsset('css', '../lib/angular-dashboard-framework/dist/angular-dashboard-framework.min.css');
 
-  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/core.js');
-  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/widget.js');
-  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/mouse.js');
-  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/sortable.js');
+  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/minified/core.min.js');
+  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/minified/widget.min.js');
+  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/minified/mouse.min.js');
+  Dashboard.aggregateAsset('js', '../lib/jquery-ui/ui/minified/sortable.min.js');
 
-  Dashboard.aggregateAsset('js', '../lib/angular-ui-sortable/sortable.js');
-  Dashboard.aggregateAsset('js', '../lib/angular-bootstrap/ui-bootstrap.js');
-  Dashboard.aggregateAsset('js', '../lib/angular-local-storage/dist/angular-local-storage.js');
+  Dashboard.aggregateAsset('js', '../lib/angular-ui-sortable/sortable.min.js');
+  Dashboard.aggregateAsset('js', '../lib/angular-route/angular-route.min.js');
+  Dashboard.aggregateAsset('js', '../lib/angular-bootstrap/ui-bootstrap.min.js');
+  Dashboard.aggregateAsset('js', '../lib/angular-bootstrap/ui-bootstrap-tpls.min.js');
   Dashboard.aggregateAsset('js', '../lib/angular-timeago/src/timeAgo.js');
 
 
   Dashboard.aggregateAsset('js', '../lib/angular-dashboard-framework/dist/angular-dashboard-framework.min.js');
 
 
-  Dashboard.angularDependencies(['yaru22.angular-timeago', 'adf', 'LocalStorageModule']);
+  Dashboard.angularDependencies(['yaru22.angular-timeago', 'adf', 'ngRoute', 'structures',
+    'sample.widgets.news', 'sample.widgets.weather',
+    'sample.widgets.linklist', 'sample.widgets.randommsg']);
 
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
