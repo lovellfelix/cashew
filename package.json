@@ -13,11 +13,11 @@
     "start": "node server",
     "mocha": "node node_modules/.bin/mocha packages/**/server/tests/**/*.js -R spec -r tools/test/mocha-req.js",
     "karma": "node node_modules/karma/bin/karma start",
-    "test": "grunt-test",
+    "test": "grunt test",
     "postinstall": "node node_modules/meanio/node_modules/mean-cli/bin/mean-postinstall"
   },
   "dependencies": {
-     "grunt-cli": "^0.1.13",
+    "grunt-cli": "^0.1.13",
     "grunt-hook": "~0.3.0",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
