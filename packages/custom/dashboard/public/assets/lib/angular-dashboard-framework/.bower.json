@@ -1,0 +1,53 @@
+{
+  "name": "angular-dashboard-framework",
+  "version": "0.7.0",
+  "main": [
+    "dist/angular-dashboard-framework.min.js",
+    "dist/angular-dashboard-framework.min.css"
+  ],
+  "ignore": [
+    "bower.json",
+    ".bowerrc",
+    ".gitignore",
+    "Gruntfile.js",
+    "node_modules",
+    "package.json",
+    "sample",
+    "src",
+    ".tmp",
+    "dist/docs"
+  ],
+  "dependencies": {
+    "angular": "1.2.27",
+    "angular-bootstrap": "0.12.0",
+    "jquery": "1.11.2",
+    "jquery-ui": "1.11.3",
+    "angular-ui-sortable": "0.13.0",
+    "bootstrap": "3.3.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.27",
+    "angular-scenario": "1.2.27",
+    "angular-route": "1.2.27",
+    "angular-local-storage": "0.1.5",
+    "json3": "~3.2.4",
+    "es5-shim": "~2.0.8",
+    "angular-markdown-directive": "~0.1.0",
+    "highcharts-ng": "0.0.6",
+    "highcharts": "4.0.3"
+  },
+  "resolutions": {
+    "angular": "1.2.27"
+  },
+  "homepage": "https://github.com/sdorra/angular-dashboard-framework",
+  "_release": "0.7.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.7.0",
+    "commit": "e0f054ee5429ac75dd6b444834a8a258ea50c8e1"
+  },
+  "_source": "git@github.com:sdorra/angular-dashboard-framework.git",
+  "_target": "~0.7.0",
+  "_originalSource": "git@github.com:sdorra/angular-dashboard-framework.git",
+  "_direct": true
+}

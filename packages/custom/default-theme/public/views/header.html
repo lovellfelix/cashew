@@ -1,143 +1,57 @@
-<!--<div class="page-header" data-ng-controller="DefaultThemeController">
-    <div class="logo pull-left">
-        <a class="navbar-brand" ui-sref="home" mean-token="'site-title'">MEAN</a>
+<div class="card bgc-light-blue-A700" data-ng-controller="DefaultThemeController">
+  <div class="toolbar">
+    <div class="toolbar__left">
+      <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('left')" data-ng-show="global.authenticated">
+        <i class="mdi mdi-menu"></i>
+      </button>
     </div>
 
-    <div class="left pull-left">
-        <ul class="navbar-nav nav">
-            <li data-ng-repeat="item in menus.main" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-                <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
-            </li>
-        </ul>
-    </div>
+    <span hide-md hide-sm show-gt-md class="toolbar__label fs-title tc-white-1">
+      <!--<a class="toolbar__link" ui-sref="home" mean-token="'site-title'">MEAN</a>-->
 
-
-  <div class="account">
-    <div class="text-edit">
-      <div class="pull-right" data-ng-show="global.authenticated" mean-token-editable></div>
-      <div class="pull-right" data-ng-show="global.authenticated" mean-translate></div>
-    </div>
-    <ul class="navbar-nav nav" data-ng-hide="global.authenticated">
-      <li><a ui-sref='auth.register'>Join</a>
-      </li>
-      <li class="divider-vertical"></li>
-      <li><a ui-sref='auth.login'>Log In</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav nav" data-ng-show="global.authenticated">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          {{global.user.name}} <b class="caret"></b>
+      <h1 class="main-logo">
+        <a ui-sref="home" class="main-logo__link" lx-ripple="white">
+          <span class="ripple bgc-white"></span>
+          <img src="/default-theme/assets/img/logo.png">
         </a>
-        <ul class="dropdown-menu">
-          <li data-ng-repeat="item in menus.account" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-            <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div>
--->
+      </h1>
 
-
-<!--<md-toolbar>
-  <div class="md-toolbar-tools " data-ng-controller="DefaultThemeController">
-
-    <span hide-md hide-sm show-gt-md><i class="icon icon--l icon--blue-grey icon--circled mdi mdi-city"></i>
     </span>
-    <button ng-click="toggleSidenav('left')" class="btn btn--l btn--black btn--icon" hide-gt-md lx-ripple>
-      <i class="mdi mdi-menu"></i>
-    </button>
 
     <span flex=""></span>
 
+    <div class="toolbar__right" data-ng-show="global.authenticated">
+      <lx-search-filter closed theme="dark"></lx-search-filter>
 
-    <i class="mdi mdi-bell-outline" data-ng-show="global.authenticated" ng-click="toggleRight()"></i>
-
-    <button class="btn btn--m btn--black btn--flat tc-white-1" lx-ripple lx-dropdown-toggle data-ng-hide="global.authenticated">
-      <i class="mdi mdi-lock"></i>
-      <a ui-sref='auth.login'>Log In</a>
-    </button>
-
-    <lx-dropdown data-ng-show="global.authenticated">
-      <button class="btn btn--m btn--black btn--flat tc-white-1" lx-ripple lx-dropdown-toggle>
-        <i class="mdi mdi-account" ng-click="toggleRight()"></i> {{global.user.name}}
+      <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('right')">
+        <i class="mdi mdi-bell-ring-outline"></i>
       </button>
 
-      <lx-dropdown-menu>
-        <ul>
-          <li><a class="dropdown-link" ng-click="dropdownAlert()">Notification</a>
-          </li>
-          <li><a class="dropdown-link">Another action</a>
-          </li>
-          <li class="dropdown-divider"></li>
-          <li>
-            <span class="dropdown-link dropdown-link--is-header">Header</span>
-          </li>
-          <li><a class="dropdown-link">Separated link</a>
-          </li>
-          <li class="dropdown-link" data-ng-repeat="item in menus.account" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-            <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
-          </li>
-        </ul>
-      </lx-dropdown-menu>
-    </lx-dropdown>
 
-  </div>
-</md-toolbar>-->
+      <lx-dropdown position="right" from-top>
+        <button class="btn btn--l btn--white btn--icon" lx-ripple lx-dropdown-toggle>
+          <i class="mdi mdi-dots-vertical"></i>
+        </button>
 
-<div class="card bgc-light-blue-A700" data-ng-controller="DefaultThemeController">
-    <div class="toolbar">
-        <div class="toolbar__left" >
-            <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('left')" data-ng-show="global.authenticated">
-                <i class="mdi mdi-menu"></i>
-            </button>
-        </div>
-
-
-        <span hide-md hide-sm show-gt-md class="toolbar__label fs-title tc-white-1">
-          <!--<a class="toolbar__link" ui-sref="home" mean-token="'site-title'">MEAN</a>-->
-
-          <h1 class="main-logo">
-        <a ui-sref="home" class="main-logo__link" lx-ripple="white"><span class="ripple bgc-white"></span>
-            <img src="/default-theme/assets/img/logo.png">
-        </a>
-    </h1>
-
-        </span>
-
-
-
-        <span flex=""></span>
-
-        <div class="toolbar__right" data-ng-show="global.authenticated">
-            <lx-search-filter closed theme="dark"></lx-search-filter>
-
-            <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('right')">
-                <i class="mdi mdi-bell-ring-outline"></i>
-            </button>
-
-
-            <lx-dropdown position="right" from-top>
-                <button class="btn btn--l btn--white btn--icon" lx-ripple lx-dropdown-toggle>
-                    <i class="mdi mdi-dots-vertical"></i>
-                </button>
-
-                <lx-dropdown-menu>
-                    <ul>
-                        <li><a class="dropdown-link">Action</a></li>
-                        <li><a class="dropdown-link">Another action</a></li>
-                        <li><a class="dropdown-link">Something else here</a></li>
-                        <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-link dropdown-link--is-header">Header</a></li>
-                        <li><a class="dropdown-link">Separated link</a></li>
-                        <li class="dropdown-link" data-ng-repeat="item in menus.account" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-                          <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
-                        </li>
-                    </ul>
-                </lx-dropdown-menu>
-            </lx-dropdown>
-        </div>
+        <lx-dropdown-menu>
+          <ul>
+            <li><a class="dropdown-link">Action</a>
+            </li>
+            <li><a class="dropdown-link">Another action</a>
+            </li>
+            <li><a class="dropdown-link">Something else here</a>
+            </li>
+            <li class="dropdown-divider"></li>
+            <li><a class="dropdown-link dropdown-link--is-header">Header</a>
+            </li>
+            <li><a class="dropdown-link">Separated link</a>
+            </li>
+            <li class="dropdown-link" data-ng-repeat="item in menus.account" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+              <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
+            </li>
+          </ul>
+        </lx-dropdown-menu>
+      </lx-dropdown>
     </div>
+  </div>
 </div>
