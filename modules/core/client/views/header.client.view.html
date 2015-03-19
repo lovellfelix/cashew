@@ -1,5 +1,4 @@
-<div class="container" data-ng-controller="HeaderController">
-	<div class="navbar-header">
+<!--	<div class="navbar-header">
 		<button class="navbar-toggle" type="button" data-ng-click="toggleCollapsibleMenu()">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
@@ -58,5 +57,61 @@
 				</ul>
 			</li>
 		</ul>
-	</nav>
-</div>
+	</nav> -->
+
+    <div class="toolbar" data-ng-controller="HeaderController">
+        <div class="toolbar__left">
+            <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('left')" data-ng-show="authentication.user">
+                <i class="mdi mdi-menu"></i>
+            </button>
+        </div>
+
+    <span hide-md hide-sm show-gt-md class="toolbar__label fs-title tc-white-1">
+
+      <h1 class="main-logo">
+          <a ui-sref="home" class="main-logo__link" lx-ripple="white">
+              <span class="ripple bgc-white"></span>
+              <img src="modules/core/img/brand/logo.png">
+          </a>
+      </h1>
+
+    </span>
+
+        <span flex=""></span>
+
+        <div class="toolbar__right" data-ng-show="authentication.user">
+            <lx-search-filter closed theme="dark"></lx-search-filter>
+
+            <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('right')">
+                <i class="mdi mdi-bell-ring-outline"></i>
+            </button>
+
+
+            <lx-dropdown position="right" from-top>
+                <button class="btn btn--l btn--white btn--icon" lx-ripple lx-dropdown-toggle>
+                    <i class="mdi mdi-dots-vertical"></i>
+                </button>
+
+                <lx-dropdown-menu>
+                    <ul>
+                        <li data-ui-sref-active="active">
+                            <a class="dropdown-link" data-ui-sref="settings.profile">Edit Profile</a>
+                        </li>
+                        <li data-ui-sref-active="active">
+                            <a class="dropdown-link" data-ui-sref="settings.picture">Change Profile Picture</a>
+                        </li>
+                        <li data-ui-sref-active="active" data-ng-show="authentication.user.provider === 'local'">
+                            <a class="dropdown-link" data-ui-sref="settings.password">Change Password</a>
+                        </li>
+                        <li data-ui-sref-active="active">
+                            <a class="dropdown-link" data-ui-sref="settings.accounts">Manage Social Accounts</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="dropdown-link" href="/api/auth/signout" target="_self">Signout</a>
+                        </li>
+                    </ul>
+                </lx-dropdown-menu>
+            </lx-dropdown>
+        </div>
+    </div>

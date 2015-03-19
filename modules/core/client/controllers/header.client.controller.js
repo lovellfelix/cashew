@@ -1,7 +1,9 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus',
-	function($scope, $state, Authentication, Menus) {
+var app = angular.module('core');
+
+app.controller('HeaderController', ['$scope', '$state', '$mdSidenav', 'Authentication', 'Menus',
+	function($scope, $state, $mdSidenav, Authentication, Menus) {
 		// Expose view variables
 		$scope.$state = $state;
 		$scope.authentication = Authentication;
@@ -19,5 +21,31 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
 		$scope.$on('$stateChangeSuccess', function() {
 			$scope.isCollapsed = false;
 		});
+
+		$scope.toggleSidenav = function(menuId) {
+	      $mdSidenav(menuId).toggle();
+	    };
+
+	    $scope.toggleRight = function() {
+	      $mdSidenav('right').toggle();
+	    };
 	}
 ]);
+
+app.controller('LeftCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  $scope.close = function() {
+    $mdSidenav('left').close()
+      .then(function() {
+        $log.debug('close LEFT is done');
+      });
+  };
+});
+
+app.controller('RightCtrl', function($scope, $timeout, $mdSidenav, $log) {
+  $scope.close = function() {
+    $mdSidenav('right').close()
+      .then(function() {
+        $log.debug('close RIGHT is done');
+      });
+  };
+});

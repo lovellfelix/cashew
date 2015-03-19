@@ -4,17 +4,26 @@ module.exports = {
 	client: {
 		lib: {
 			css: [
-				'public/lib/bootstrap/dist/css/bootstrap.css',
-				'public/lib/bootstrap/dist/css/bootstrap-theme.css'
+				'public/lib/angular-material/angular-material.css',
+				'public/lib/mdi/css/materialdesignicons.css',
+                //'public/lib/bootstrap/dist/css/bootstrap.css',
+                //'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+				'public/lib/lumx/dist/lumx.css'
 			],
 			js: [
+                'public/lib/jquery/dist/jquery.js',
+                'public/lib/velocity/velocity.min.js',
 				'public/lib/angular/angular.js',
-				'public/lib/angular-resource/angular-resource.js',
+                'public/lib/angular-aria/angular-aria.js',
+                'public/lib/angular-resource/angular-resource.js',
 				'public/lib/angular-animate/angular-animate.js',
-				'public/lib/angular-ui-router/release/angular-ui-router.js',
+                'public/lib/angular-material/angular-material.js',
+                'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-				'public/lib/angular-file-upload/angular-file-upload.js'
+				'public/lib/angular-file-upload/angular-file-upload.js',
+				'public/lib/moment/min/moment-with-locales.min.js',
+				'public/lib/lumx/dist/lumx.min.js'
 			],
 			tests: ['public/lib/angular-mocks/angular-mocks.js']
 		},
