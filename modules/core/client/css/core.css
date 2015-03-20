@@ -105,3 +105,10 @@ a:hover .header-profile-image {
     line-height: 48px;
     text-decoration: none;
 }
+.name-sidebar__link {
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    background-color: transparent;
+}
+
