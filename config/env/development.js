@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/mean-dev',
-	app: {
+	db: 'mongodb://' + (process.env.MONGO_PORT_27017_TCP_ADDR || 'localhost') + '/cashew',
+		app: {
 		title: 'MEAN.JS - Development Environment'
 	},
 	facebook: {
