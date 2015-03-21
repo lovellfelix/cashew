@@ -7,6 +7,7 @@ angular.module('articles').run(['Menus',
 		Menus.addMenuItem('topbar', {
 			title: 'Articles',
 			state: 'articles',
+			icon: 'file-document',
 			type: 'dropdown'
 		});
 

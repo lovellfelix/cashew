@@ -54,17 +54,17 @@
 <!--ENDS-->
 
         <div flex-item="6" >
-      
+
         <ul class="list mt++">
-            
+
             <li class="list-row list-row" data-ng-repeat="item in menu.items">
                 <div class="list-row__primary">
-                    <i class="icon icon--s icon--grey icon--flat mdi mdi-file"></i>
+                    <i class="icon icon--s icon--grey icon--flat mdi mdi-{{item.icon}}"></i>
                 </div>
 
                 <div class="list-row__content">
                    <span data-ng-bind="item.title"></span>
-                 
+
                 </div>
             </li>
 
