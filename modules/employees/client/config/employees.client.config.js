@@ -7,6 +7,7 @@ angular.module('employees').run(['Menus',
 		Menus.addMenuItem('topbar', {
 			title: 'Employees',
 			state: 'employees',
+			icon: 'account-multiple',
 			type: 'dropdown'
 		});
 
