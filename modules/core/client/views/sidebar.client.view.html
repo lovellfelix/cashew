@@ -57,7 +57,7 @@
 
         <ul class="list mt++">
 
-            <li class="list-row list-row" data-ng-repeat="item in menu.items">
+            <li class="list-row list-row" data-ng-repeat="item in menu.items" data-ui-sref="{{item.state}}">
                 <div class="list-row__primary">
                     <i class="icon icon--s icon--grey icon--flat mdi mdi-{{item.icon}}"></i>
                 </div>

@@ -6,7 +6,7 @@ angular.module('employees').run(['Menus',
 		// Add the Employees dropdown item
 		Menus.addMenuItem('topbar', {
 			title: 'Employees',
-			state: 'employees',
+			state: 'employees.list',
 			icon: 'account-multiple',
 			type: 'dropdown'
 		});
