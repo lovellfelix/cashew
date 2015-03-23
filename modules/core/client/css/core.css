@@ -112,3 +112,16 @@ a:hover .header-profile-image {
     background-color: transparent;
 }
 
+.sidebar-footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
+   background:#E0E0E0;
+}
+
+/* IE 6 */
+* html .sidebar-footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
