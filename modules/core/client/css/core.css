@@ -125,3 +125,7 @@ a:hover .header-profile-image {
    position:absolute;
    top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
+
+md-toolbar{
+	box-shadow: none;
+}

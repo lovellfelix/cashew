@@ -65,11 +65,9 @@
 
 
 
-	<md-content class="md-padding" >
 		<section class="container">
 			{% block content %}{% endblock %}
 		</section>
-	</md-content>		
 
 
     <section class="" ng-click="close()">
@@ -81,12 +79,12 @@
 	<script type="text/javascript">
 		var user = {{ user | json | safe }};
 	</script>
-	
+
 	<!--Load The Socket.io File-->
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
 	<!--Application JavaScript Files-->
-	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %} 
+	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
 
 	{% if process.env.NODE_ENV === 'development' %}
 	<!--Livereload script rendered -->
