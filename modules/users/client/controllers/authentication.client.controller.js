@@ -32,8 +32,23 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 
 				LxNotificationService.error(response.message);
 
+				//TODO - notify to reset password if login fail after three attemps
 
 			});
 		};
+
+
+		$scope.help = function() {
+			LxNotificationService.confirm('Forget your password?', ' No worries! We can reset it for you.', { cancel:'Disagree', ok:'Agree' }, function(answer)
+        {
+            console.log(answer);
+
+						if (answer == true) $location.path('/forgot');
+
+        });
+
+
+		};
+
 	}
 ]);
