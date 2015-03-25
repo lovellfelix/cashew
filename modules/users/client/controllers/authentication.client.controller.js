@@ -43,7 +43,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
         {
             console.log(answer);
 
-						if (answer == true) $location.path('/forgot');
+						if (answer === true) $location.path('/forgot');
 
         });
 
