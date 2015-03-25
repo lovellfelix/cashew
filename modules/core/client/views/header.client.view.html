@@ -90,7 +90,7 @@
       </button>
       <lx-dropdown-menu>
         <ul>
-          <li data-ui-sref-active="active">
+          <!-- <li data-ui-sref-active="active">
             <a class="dropdown-link" data-ui-sref="settings.profile">Edit Profile</a>
           </li>
           <li data-ui-sref-active="active">
@@ -105,6 +105,14 @@
           <li class="divider"></li>
           <li>
             <a class="dropdown-link" href="/api/auth/signout" target="_self">Signout</a>
+          </li> -->
+          <li><span class="dropdown-link dropdown-link--is-header">Information</span></li>
+
+          <li>
+            <span class="dropdown-link" ng-click="alert()">About</span>
+          </li>
+          <li>
+            <span class="dropdown-link" ng-click="alert()">License</span>
           </li>
         </ul>
       </lx-dropdown-menu>
