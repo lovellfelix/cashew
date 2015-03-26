@@ -59,6 +59,45 @@
 		</ul>
 	</nav> -->
 
+<lx-dialog class="dialog dialog--l" id="about" onclose="closingDialog()">
+  <div class="dialog__header">
+    <div class="toolbar bgc-light-blue-500 pl++">
+      <span class="toolbar__label tc-white fs-title">
+        Arawak {{title}}
+      </span>
+
+      <div class="toolbar__right">
+        <button class="btn btn--l btn--white btn--icon">
+          <i class="mdi mdi-leaf"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="dialog__content">
+    <span class="fs-title display-block ml++ mt+++">Arawak v0.0.1-alpha</span>
+    <span class="fs-caption display-block ml++">Copyright © 2015 Arawak.</span>
+    <br />
+    <p class="ml+++">This program is free software: you can redistribute it and/or modify
+      <br />it under the terms of the GNU General Public License as published by
+      <br />the Free Software Foundation, either version 3 of the License, or
+      <br />(at your option) any later version.
+      <br />
+      <br />This program is distributed in the hope that it will be useful,
+      <br />but WITHOUT ANY WARRANTY; without even the implied warranty of
+      <br />MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+      <br />GNU General Public License for more details.
+      <br />
+      <br />You should have received a copy of the GNU General Public License
+      <br />along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses</a>.</p>
+    <p class="p++">This product also includes code written by other third parties. Additional details regarding these and other third party code included in this product, including applicable copyright, legal and licensing notices, are available in the "licenses" directory
+      under the Arawak installation directory.</p>
+    <br />
+  </div>
+  <div class="dialog__actions">
+    <button class="btn btn--m btn--black btn--flat" lx-ripple lx-dialog-close>Close</button>
+  </div>
+</lx-dialog>
+
 <div class="toolbar" data-ng-controller="HeaderController">
   <div class="toolbar__left">
     <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('left')" data-ng-show="authentication.user">
@@ -80,10 +119,11 @@
   <span flex=""></span>
   <div class="toolbar__right" data-ng-show="authentication.user">
     <lx-search-filter closed theme="dark"></lx-search-filter>
-
+    <div hide-md hide-sm show-gt-md>
     <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('right')">
       <i class="mdi mdi-bell-ring-outline"></i>
     </button>
+  </div>
     <lx-dropdown position="right" from-top>
       <button class="btn btn--l btn--white btn--icon" lx-ripple lx-dropdown-toggle>
         <i class="mdi mdi-dots-vertical"></i>
@@ -106,13 +146,15 @@
           <li>
             <a class="dropdown-link" href="/api/auth/signout" target="_self">Signout</a>
           </li> -->
-          <li><span class="dropdown-link dropdown-link--is-header">Information</span></li>
+          <li>
+            <span class="dropdown-link dropdown-link--is-header">Information</span>
+          </li>
 
           <li>
-            <span class="dropdown-link" ng-click="alert()">About</span>
+            <span class="dropdown-link" ng-click="opendDialog('about')">About</span>
           </li>
           <li>
-            <span class="dropdown-link" ng-click="alert()">License</span>
+            <span class="dropdown-link" ng-click="alert()">What's New</span>
           </li>
         </ul>
       </lx-dropdown-menu>

@@ -2,8 +2,8 @@
 
 var app = angular.module('core');
 
-app.controller('HeaderController', ['$scope', '$state', '$mdSidenav', 'Authentication', 'Menus', 'LxNotificationService',
-  function($scope, $state, $mdSidenav, Authentication, Menus, LxNotificationService) {
+app.controller('HeaderController', ['$scope', '$state', '$mdSidenav', 'Authentication', 'Menus',  'LxNotificationService', 'LxDialogService',
+  function($scope, $state, $mdSidenav, Authentication, Menus, LxNotificationService, LxDialogService) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
@@ -37,6 +37,13 @@ app.controller('HeaderController', ['$scope', '$state', '$mdSidenav', 'Authentic
       });
     };
 
+    $scope.opendDialog = function(dialogId) {
+      LxDialogService.open(dialogId);
+    };
+
+    $scope.closingDialog = function() {
+      LxNotificationService.info('Dialog closed!');
+    };
 
   }
 ]);
