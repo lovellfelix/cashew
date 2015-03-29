@@ -10,6 +10,7 @@ angular.module('employees').controller('EmployeesController', ['$scope', '$state
 			// Create new Employee object
 			var employee = new Employees ({
 				name: this.name
+
 			});
 
 			// Redirect after save
@@ -57,9 +58,21 @@ angular.module('employees').controller('EmployeesController', ['$scope', '$state
 
 		// Find existing Employee
 		$scope.findOne = function() {
-			$scope.employee = Employees.get({ 
+			$scope.employee = Employees.get({
 				employeeId: $stateParams.employeeId
 			});
+		};
+
+		// Allow editing if user is administratio
+		$scope.isAllowed = function(user) {
+		  if (user) {
+		    for (var userRoleIndex in user.roles) {
+
+		      if (user.roles[userRoleIndex] === "admin") {
+		        return true;
+		      }
+		    }
+		  }
 		};
 	}
 ]);

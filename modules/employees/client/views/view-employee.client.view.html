@@ -1,21 +1,122 @@
+
 <section data-ng-controller="EmployeesController" data-ng-init="findOne()">
+
+<md-toolbar class="md-tall bgc-light-blue-A700" md-scroll-shrink>
+      <!-- <span flex></span>
+			<img data-ng-src="{{employee.user.profileImageURL}}" width="40" height="40" class="img-round">
+      <span class="ml+ md-toolbar-tools-bottom fs-headline display-block" data-ng-bind="employee.user.displayName">
+      <span class="ml+ md-toolbar-tools-bottom fs-subhead display-block" data-ng-bind="employee.user.jobTitle"></span>
+       -->
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+
+        <ul class="list ml+++">
+                    <li class="list-row">
+                        <div class="list-row__primary mr+++">
+                            <img data-ng-src="{{employee.user.profileImageURL}}" width="75" height="75" class="img-round">
+                        </div>
+
+                        <div class="list-row__content">
+                            <span class="display-block fs-display-2" data-ng-bind="employee.firstName"></span>
+                            <span class="display-block fs-body-1 tc-black-2" data-ng-bind="employee.jobTitle"></span>
+                        </div>
+
+                </li></ul>
+
+      <md-button>
+      </md-button>
+    </div>
+
+</md-toolbar>
+
+<md-content class="md-padding">
+
+  <div layout="row">
+  <div>I'm left.</div>
+  <div>I'm right.</div>
+</div>
+
+
+<div layout="column">
+  <div>I'm above.</div>
+  <div>I'm below.</div>
+</div>
+
+
+<div class="tc-white-1" flex-container="row">
+    <div flex-item="2" flex-item-order="1"><div class="p+ bgc-red-500">[flex-item="2"]</div></div>
+    <div flex-item="6" flex-item-order="3"><div class="p+ bgc-blue-500">[flex-item="6"]</div></div>
+    <div flex-item="4" flex-item-order="2"><div class="p+ bgc-green-500">[flex-item="4"]</div></div>
+</div>
+
+
+
+
+<!-- Light theme -->
+
+<div class="mt++" flex-container="row" flex-gutter="24">
+    <div flex-item>
+        <form>
+            <lx-text-field label="First and last name" fixed-label="true" icon="account">
+                <input type="text" ng-model="textFields.fixedFirstName">
+            </lx-text-field>
+
+            <lx-text-field label="Phone number" fixed-label="true" icon="phone">
+                <input type="text" ng-model="textFields.fixedLastName">
+            </lx-text-field>
+
+            <lx-text-field label="Email address" fixed-label="true" icon="email">
+                <input type="email" ng-model="textFields.fixedEmail">
+            </lx-text-field>
+
+            <lx-text-field label="Location" fixed-label="true" icon="city">
+                <input type="text" ng-model="textFields.fixedAdress">
+            </lx-text-field>
+        </form>
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="pull-right" data-ng-show="authentication.user._id == employee.user._id || isAllowed(authentication.user)">
+  <a class="btn btn-primary" href="/#!/employees/{{employee._id}}/edit">
+    <i class="mdi mdi-pencil"></i>
+
+  </a>
+  <a class="btn btn-primary" data-ng-click="remove();">
+    <i class="mdi mdi-delete"></i>
+  </a>
+</div>
+<small>
+  <em class="text-muted">
+    Posted on
+    <span data-ng-bind="employee.created | date:'mediumDate'"></span>
+    by
+    <span data-ng-bind="employee.user.displayName"></span>
+  </em>
+</small>
+
+
+
+
+
+</md-content>
+
+
 	<div class="page-header">
-		<h1 data-ng-bind="employee.name"></h1>
+		<span data-ng-bind="employee.firstName"></span>
+		<span data-ng-bind="employee.lastName"></span>
+		<span data-ng-bind="employee.jobTitle"></span>
+		<span data-ng-bind="employee.department"></span>
 	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == employee.user._id">
-		<a class="btn btn-primary" href="/#!/employees/{{employee._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
-	<small>
-		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="employee.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="employee.user.displayName"></span>
-		</em>
-	</small>
+
+
+
+
+
+
 </section>
