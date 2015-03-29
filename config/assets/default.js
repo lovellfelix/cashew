@@ -6,8 +6,9 @@ module.exports = {
 			css: [
 				'public/lib/angular-material/angular-material.css',
 				'public/lib/mdi/css/materialdesignicons.css',
-      //'public/lib/bootstrap/dist/css/bootstrap.css',
-      //'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+      // 'public/lib/bootstrap/dist/css/bootstrap.css',
+      // 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+      'public/lib/angular-xeditable/dist/css/xeditable.css',
 				'public/lib/lumx/dist/lumx.css'
 			],
 			js: [
@@ -23,7 +24,8 @@ module.exports = {
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
 				'public/lib/angular-file-upload/angular-file-upload.js',
 				'public/lib/moment/min/moment-with-locales.min.js',
-				'public/lib/lumx/dist/lumx.min.js'
+				'public/lib/lumx/dist/lumx.min.js',
+				'public/lib/angular-xeditable/dist/js/xeditable.js'
 			],
 			tests: ['public/lib/angular-mocks/angular-mocks.js']
 		},

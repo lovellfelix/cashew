@@ -1,7 +1,8 @@
 'use strict';
 
 // Configuring the Employees module
-angular.module('employees').run(['Menus',
+var app = angular.module('employees');
+app.run(['Menus',
 	function(Menus) {
 		// Add the Employees dropdown item
 		Menus.addMenuItem('topbar', {
@@ -24,3 +25,7 @@ angular.module('employees').run(['Menus',
 		});
 	}
 ]);
+
+app.run(function(editableOptions) {
+  editableOptions.theme = 'default';
+});
