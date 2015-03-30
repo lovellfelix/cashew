@@ -1,0 +1,26 @@
+/* CONFIGURATION */
+
+/* Bodytext font */
+$font: 'Roboto Condensed', sans-serif;
+
+/* Font for headings */
+$fontheadings: 'Roboto Condensed', sans-serif;
+
+/* Colors */
+$darkPrimaryColor:   #0097A7;
+$primaryColor:       #00BCD4;
+$lightPrimaryColor:  #B2EBF2;
+$textPrimaryColor:   #FFFFFF;
+$accentColor:        #FFC107;
+$primaryTextColor:   #212121;
+$secondaryTextColor: #727272;
+$dividerColor:       #B6B6B6;
+$backgroundColor:	 #FFFFFF;
+
+/* IMPORT CSS FILES */
+@import "base";
+@import "dialog";
+@import "fab";
+@import "nav";
+@import "sidebar";
+@import "toolbar";

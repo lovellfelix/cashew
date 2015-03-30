@@ -1,0 +1,134 @@
+/* CONFIGURATION */
+/* Bodytext font */
+/* Font for headings */
+/* Colors */
+/* IMPORT CSS FILES */
+body {
+  background: #FFFFFF;
+  font-family: 'Roboto Condensed', sans-serif; }
+
+.content {
+  margin-top: 50px; }
+
+.undecorated-link:hover {
+  text-decoration: none; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+.ng-invalid.ng-dirty {
+  border-color: #FA787E; }
+
+.ng-valid.ng-dirty {
+  border-color: #78FA89; }
+
+.dialog--alert {
+  top: 20%; }
+
+.fab--position__bottom {
+  top: auto;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  position: absolute; }
+
+.fab--position__top-right {
+  top: 155px;
+  right: 45px;
+  bottom: auto;
+  left: auto;
+  position: absolute; }
+
+.fab--btn__responsive {
+  top: 155px;
+  right: 24px;
+  bottom: auto;
+  left: auto;
+  position: absolute; }
+  @media (max-width: 767px) {
+    .fab--btn__responsive {
+      top: auto;
+      right: 16px;
+      bottom: 20px;
+      left: auto;
+      position: absolute; } }
+  @media (min-width: 1025px) {
+    .fab--btn__responsive {
+      top: 160px; } }
+
+.home .menubar {
+  display: none; }
+
+.main-logo {
+  float: left; }
+
+.main-logo__link {
+  display: block;
+  padding: 6px 6px;
+  border-radius: 2px;
+  font-size: 24px;
+  font-size: 1.5rem; }
+
+.main-logo__link img {
+  display: block;
+  height: 28px; }
+
+.main-nav {
+  float: right; }
+
+.main-nav ul li {
+  float: left; }
+
+@media screen and (max-width: 480px) {
+  .main-nav--lap-and-up {
+    display: none; } }
+
+@media screen and (min-width: 481px) {
+  .main-nav--palm {
+    display: none; } }
+
+.main-nav__link {
+  display: block;
+  padding: 0 12px;
+  border-radius: 2px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: white;
+  line-height: 36px;
+  text-decoration: none; }
+
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+  .main-nav__link {
+    font-size: 14px;
+    font-size: 0.875rem; } }
+
+.dropdown-link {
+  min-width: 140px; }
+
+.sidebar-menu__link {
+  display: block;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 48px;
+  text-decoration: none; }
+
+.name-sidebar__link {
+  font-weight: bold;
+  text-transform: capitalize;
+  text-decoration: none;
+  background-color: transparent; }
+
+.sidebar-footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background: #ebeff2; }
+
+md-toolbar {
+  box-shadow: none; }
