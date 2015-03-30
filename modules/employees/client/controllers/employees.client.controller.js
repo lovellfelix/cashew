@@ -1,7 +1,9 @@
 'use strict';
 
 // Employees controller
-angular.module('employees').controller('EmployeesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Employees',
+var app = angular.module('employees');
+
+app.controller('EmployeesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Employees',
 	function($scope, $stateParams, $location, Authentication, Employees ) {
 		$scope.authentication = Authentication;
 
@@ -68,11 +70,13 @@ angular.module('employees').controller('EmployeesController', ['$scope', '$state
 		  if (user) {
 		    for (var userRoleIndex in user.roles) {
 
-		      if (user.roles[userRoleIndex] === "admin") {
+		      if (user.roles[userRoleIndex] === 'admin') {
 		        return true;
 		      }
 		    }
 		  }
 		};
+
+
 	}
 ]);

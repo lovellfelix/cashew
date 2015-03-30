@@ -13,14 +13,16 @@
         <ul class="list ml+++">
                     <li class="list-row">
                         <div class="list-row__primary mr+++">
-                            <img data-ng-src="{{employee.user.profileImageURL}}" width="75" height="75" class="img-round">
+                            <img data-ng-src="{{employee.user.profileImageURL}}" width="85" height="85" class="img-round">
                         </div>
-
-                        <div class="list-row__content">
-                            <span class="display-block fs-display-2" data-ng-bind="employee.firstName"></span>
-                            <span class="display-block fs-body-1 tc-black-2" data-ng-bind="employee.jobTitle"></span>
+                        <div class="list-row__content ml++">
+                            <span class="display-block fs-display-2" data-ng-bind="employee.user.displayName"></span>
+                            <span class="display-block fs-body-2" data-ng-bind="employee.jobTitle"></span>
+                            <span class="display-block fs-body-1 tc-black-2" data-ng-bind="employee.department"></span>
                         </div>
-
+                    <div class="list-row__secondary">
+                        <i class="icon icon--xs icon--grey icon--flat mdi mdi-information"></i>
+                    </div>
                 </li></ul>
 
       <md-button>
@@ -31,30 +33,43 @@
 
 <md-content class="md-padding">
 
-  <div layout="row">
-  <div>I'm left.</div>
-  <div>I'm right.</div>
+
+<div >
+  <form editable-form name="editableForm" onaftersave="update()">
+    <div>
+      <!-- editable username (text with validation) -->
+      <span editable-text="employee.firstName" e-name="firstName" e-required>{{ employee.firstName || 'empty' }}</span>
+      <span editable-text="employee.lastName" e-name="lastName"  e-required>{{ employee.lastName || 'empty' }}</span>
+      <span editable-text="employee.user.displayName" e-name="displayName"  e-required>{{ employee.user.displayName || 'empty' }}</span>
+      <span editable-text="employee.department" e-name="displayName"  e-required>{{ employee.user.displayName || 'empty' }}</span>
+    </div>
+
+    <div class="buttons">
+      <!-- button to show form -->
+      <button type="button" class="btn btn--m btn--blue btn--raised" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+        Edit
+      </button>
+      <!-- buttons to submit / cancel form -->
+      <span ng-show="editableForm.$visible">
+        <button type="submit" class="btn btn--m btn--blue btn--raised" ng-disabled="editableForm.$waiting">
+          Save
+        </button>
+        <button type="button" class="btn btn--m btn--blue btn--raisedt" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+          Cancel
+        </button>
+      </span>
+    </div>
+
+  </form>
+
+  <a href="#" data-ng-bind="employee.firstName" editable-text="employee.firstName" buttons="no"> </a>
 </div>
 
-
-<div layout="column">
-  <div>I'm above.</div>
-  <div>I'm below.</div>
-</div>
-
-
-<div class="tc-white-1" flex-container="row">
-    <div flex-item="2" flex-item-order="1"><div class="p+ bgc-red-500">[flex-item="2"]</div></div>
-    <div flex-item="6" flex-item-order="3"><div class="p+ bgc-blue-500">[flex-item="6"]</div></div>
-    <div flex-item="4" flex-item-order="2"><div class="p+ bgc-green-500">[flex-item="4"]</div></div>
-</div>
+<!-- change the path from /#/login to /?username=aaa&userpass=aaa#/login and reloads the page-->
 
 
 
-
-<!-- Light theme -->
-
-<div class="mt++" flex-container="row" flex-gutter="24">
+<!-- <div class="mt++" flex-container="row" flex-gutter="24">
     <div flex-item>
         <form>
             <lx-text-field label="First and last name" fixed-label="true" icon="account">
@@ -74,18 +89,12 @@
             </lx-text-field>
         </form>
     </div>
-
-
-</div>
-
-
-
+</div> -->
 
 
 <div class="pull-right" data-ng-show="authentication.user._id == employee.user._id || isAllowed(authentication.user)">
   <a class="btn btn-primary" href="/#!/employees/{{employee._id}}/edit">
     <i class="mdi mdi-pencil"></i>
-
   </a>
   <a class="btn btn-primary" data-ng-click="remove();">
     <i class="mdi mdi-delete"></i>
@@ -99,24 +108,22 @@
     <span data-ng-bind="employee.user.displayName"></span>
   </em>
 </small>
-
-
-
-
-
 </md-content>
 
 
-	<div class="page-header">
-		<span data-ng-bind="employee.firstName"></span>
-		<span data-ng-bind="employee.lastName"></span>
-		<span data-ng-bind="employee.jobTitle"></span>
-		<span data-ng-bind="employee.department"></span>
-	</div>
 
 
+    <div class="fab fab--btn__responsive" ng-show="!editableForm.$visible">
+      <button type="button" class="btn btn--xl btn--blue btn--fab" lx-ripple lx-tooltip="Edit" tooltip-position="left" ng-click="editableForm.$show()">
+        <i class="mdi mdi-pencil"></i>
+      </button>
+    </div>
 
-
+    <div class="fab fab--btn__responsive" ng-show="editableForm.$visible">
+      <button type="submit" class="btn btn--xl btn--blue btn--fab" lx-ripple lx-tooltip="Save" tooltip-position="left" ng-disabled="editableForm.$waiting" ng-click="test ()">
+        <i class="mdi mdi-check"></i>
+      </button>
+    </div>
 
 
 </section>
