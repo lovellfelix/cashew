@@ -98,66 +98,57 @@
   </div>
 </lx-dialog>
 
-<div class="toolbar" data-ng-controller="HeaderController">
-  <div class="toolbar__left">
-    <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('left')" data-ng-show="authentication.user">
-      <i class="mdi mdi-menu"></i>
-    </button>
-  </div>
-  <span hide-md hide-sm show-gt-md class="toolbar__label fs-title tc-white-1">
-    <h1 class="main-logo">
-      <a ui-sref="home" class="main-logo__link" lx-ripple="white" data-ng-show="authentication.user">
-        <span class="ripple bgc-white"></span>
-        <img src="modules/core/img/brand/logo.png">
-      </a>
-      <a class="main-logo__link" data-ng-show="!authentication.user">
-        <span class="ripple bgc-white"></span>
-        <img src="modules/core/img/brand/logo.png">
-      </a>
-    </h1>
-  </span>
-  <span flex=""></span>
-  <div class="toolbar__right" data-ng-show="authentication.user">
-    <lx-search-filter closed theme="dark"></lx-search-filter>
-    <div hide-md hide-sm show-gt-md>
-    <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('right')">
-      <i class="mdi mdi-bell-ring-outline"></i>
-    </button>
-  </div>
-    <lx-dropdown position="right" from-top>
-      <button class="btn btn--l btn--white btn--icon" lx-ripple lx-dropdown-toggle>
-        <i class="mdi mdi-dots-vertical"></i>
+<div layout="column" layout-fill data-ng-controller="HeaderController">
+  <md-toolbar md-scroll-shrink class="bgc-toolbar__primary">
+    <div class="md-toolbar-tools">
+      <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('left')" data-ng-show="authentication.user">
+        <i class="mdi mdi-menu"></i>
       </button>
-      <lx-dropdown-menu>
-        <ul>
-          <!-- <li data-ui-sref-active="active">
-            <a class="dropdown-link" data-ui-sref="settings.profile">Edit Profile</a>
-          </li>
-          <li data-ui-sref-active="active">
-            <a class="dropdown-link" data-ui-sref="settings.picture">Change Profile Picture</a>
-          </li>
-          <li data-ui-sref-active="active" data-ng-show="authentication.user.provider === 'local'">
-            <a class="dropdown-link" data-ui-sref="settings.password">Change Password</a>
-          </li>
-          <li data-ui-sref-active="active">
-            <a class="dropdown-link" data-ui-sref="settings.accounts">Manage Social Accounts</a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a class="dropdown-link" href="/api/auth/signout" target="_self">Signout</a>
-          </li> -->
-          <li>
-            <span class="dropdown-link dropdown-link--is-header">Information</span>
-          </li>
+      <span hide-md hide-sm show-gt-md class="fs-title tc-white-1">
+        <h1 class="main-logo">
+          <a ui-sref="home" class="main-logo__link" lx-ripple="white" data-ng-show="authentication.user">
+            <span class="ripple bgc-white"></span>
+            <img src="modules/core/img/brand/logo.png">
+          </a>
+          <a class="main-logo__link" data-ng-show="!authentication.user">
+            <span class="ripple bgc-white"></span>
+            <img src="modules/core/img/brand/logo.png">
+          </a>
+        </h1>
+      </span>
+      <span flex></span>
 
-          <li>
-            <span class="dropdown-link" ng-click="opendDialog('about')">About</span>
-          </li>
-          <li>
-            <span class="dropdown-link" ng-click="alert()">What's New</span>
-          </li>
-        </ul>
-      </lx-dropdown-menu>
-    </lx-dropdown>
-  </div>
+
+      <lx-search-filter closed theme="dark" data-ng-show="authentication.user"></lx-search-filter>
+
+      <div hide-md hide-sm show-gt-md data-ng-show="authentication.user">
+      <button class="btn btn--l btn--white btn--icon" lx-ripple ng-click="toggleSidenav('right')">
+        <i class="mdi mdi-bell-ring-outline"></i>
+      </button>
+     </div>
+
+      <div data-ng-show="authentication.user">
+      <lx-dropdown position="right" from-top>
+        <button class="btn btn--l btn--white btn--icon" lx-ripple lx-dropdown-toggle>
+          <i class="mdi mdi-dots-vertical"></i>
+        </button>
+        <lx-dropdown-menu>
+          <ul>
+            <li>
+              <span class="dropdown-link dropdown-link--is-header">Information</span>
+            </li>
+
+            <li>
+              <span class="dropdown-link" ng-click="opendDialog('about')">About</span>
+            </li>
+            <li>
+              <span class="dropdown-link" ng-click="alert()">What's New</span>
+            </li>
+          </ul>
+        </lx-dropdown-menu>
+      </lx-dropdown>
+    </div>
+
+    </div>
+  </md-toolbar>
 </div>

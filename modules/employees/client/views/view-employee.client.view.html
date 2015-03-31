@@ -46,12 +46,12 @@
 
     <div class="buttons">
       <!-- button to show form -->
-      <button type="button" class="btn btn--m btn--blue btn--raised" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+      <button type="button" class="btn btn--m btn--default btn--raised" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
         Edit
       </button>
       <!-- buttons to submit / cancel form -->
       <span ng-show="editableForm.$visible">
-        <button type="submit" class="btn btn--m btn--blue btn--raised" ng-disabled="editableForm.$waiting">
+        <button type="submit" class="btn btn--m btn--default btn--raised" ng-disabled="editableForm.$waiting">
           Save
         </button>
         <button type="button" class="btn btn--m btn--blue btn--raisedt" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
@@ -114,13 +114,13 @@
 
 
     <div class="fab fab--btn__responsive" ng-show="!editableForm.$visible">
-      <button type="button" class="btn btn--xl btn--blue btn--fab" lx-ripple lx-tooltip="Edit" tooltip-position="left" ng-click="editableForm.$show()">
+      <button type="button" class="btn btn--xl btn--default btn--fab" lx-ripple lx-tooltip="Edit" tooltip-position="left" ng-click="editableForm.$show()">
         <i class="mdi mdi-pencil"></i>
       </button>
     </div>
 
     <div class="fab fab--btn__responsive" ng-show="editableForm.$visible">
-      <button type="submit" class="btn btn--xl btn--blue btn--fab" lx-ripple lx-tooltip="Save" tooltip-position="left" ng-disabled="editableForm.$waiting" ng-click="test ()">
+      <button type="submit" class="btn btn--xl btn--default btn--fab" lx-ripple lx-tooltip="Save" tooltip-position="left" ng-disabled="editableForm.$waiting" ng-click="test ()">
         <i class="mdi mdi-check"></i>
       </button>
     </div>

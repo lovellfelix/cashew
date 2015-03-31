@@ -42,3 +42,8 @@
 
 
 }
+
+.btn--fab.btn--default, .btn--raised.btn--default {
+  color: $textPrimaryColor;
+  background-color: $accentColor;
+}
