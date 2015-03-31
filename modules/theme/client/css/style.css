@@ -22,6 +22,19 @@ body {
 .ng-valid.ng-dirty {
   border-color: #78FA89; }
 
+.responsive__container {
+  margin: 0 auto;
+  width: 70%;
+  height: 750px;
+  z-index: 3;
+  margin-top: -60px; }
+  @media (max-width: 767px) {
+    .responsive__container {
+      width: 80%; } }
+  @media (min-width: 1025px) {
+    .responsive__container {
+      width: 70%; } }
+
 .dialog--alert {
   top: 20%; }
 
@@ -131,4 +144,5 @@ body {
   background: #ebeff2; }
 
 md-toolbar {
-  box-shadow: none; }
+  box-shadow: none;
+  position: inherit; }

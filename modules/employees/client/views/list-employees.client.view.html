@@ -1,33 +1,44 @@
-
 <md-toolbar class="md-tall bgc-light-blue-A700">
-      <span flex></span>
-      <h2 class="ml+ md-toolbar-tools-bottom fs-display-4 display-block">
-        Directory
-    </h2>
+  <span flex></span>
 </md-toolbar>
 
+<div class="responsive__container">
 
-<md-content class="md-padding" >
+  <section data-ng-controller="EmployeesController" data-ng-init="find()">
 
-<section data-ng-controller="EmployeesController" data-ng-init="find()">
-    <div class="page-header">
+    <div layout="row" layout-wrap layout-padding>
+      <div flex="25" flex-md="50" flex-sm="100" data-ng-repeat="employee in employees">
+        <div class="card">
+          <a data-ng-href="/#!/employees/{{employee._id}}">
+            <div class="card__img card__img--top">
+              <img data-ng-src="{{employee.user.profileImageURL}}">
+          </a>
+          </div>
+          <div class="p+">
+            <span class="fs-headline tc-black-1 display-block" data-ng-bind="employee.user.displayName"></span>
+            <span class="fs-subhead tc-black-2 display-block" data-ng-bind="employee.jobTitle"></span>
+            <span class="fs-subhead tc-black-2 display-block" data-ng-bind="employee.department"></span>
+            <div class="paragraph fs-body-1">
+            </div>
+          </div>
+          <div class="card__actions">
+            <button class="btn btn--m btn--black btn--flat" lx-ripple>Profile</button>
+            <button class="btn btn--m btn--orange btn--flat" lx-ripple>Message</button>
+          </div>
+        </div>
 
-    </div>
-    <div class="list-group">
-        <a data-ng-repeat="employee in employees" data-ng-href="/#!/employees/{{employee._id}}" class="list-group-item">
-			<small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="employee.created | date:'medium'"></span>
-				by
-				<span data-ng-bind="employee.user.displayName"></span>
-			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="employee.name"></h4>
-      <span data-ng-bind="employee.lastName"></span>
-        </a>
+      </div>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!employees.$resolved || employees.length">
-    	No Employees yet, why don't you <a href="/#!/employees/create">create one</a>?
+      No Employees yet, why don't you <a href="/#!/employees/create">create one</a>?
     </div>
-</section>
+  </section>
 
-</md-content>
+</div>
+
+
+<div class="fab fab--btn__responsive">
+  <button type="submit" class="btn btn--xl btn--blue btn--fab" lx-ripple lx-tooltip="Add" tooltip-position="left">
+    <i class="mdi mdi-pencil"></i>
+  </button>
+</div>
