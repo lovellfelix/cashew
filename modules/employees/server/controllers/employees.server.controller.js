@@ -73,7 +73,7 @@ exports.delete = function(req, res) {
 /**
  * List of Employees
  */
-exports.list = function(req, res) { Employee.find().sort('-created').populate('user', 'displayName username profileImageURL').exec(function(err, employees) {
+exports.list = function(req, res) { Employee.find().sort('-created').populate('user', 'displayName username profileImageURL email').exec(function(err, employees) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

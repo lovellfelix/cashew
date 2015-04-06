@@ -7,7 +7,7 @@
   <section data-ng-controller="EmployeesController" data-ng-init="find()">
 
     <div layout="row" layout-wrap layout-padding>
-      <div flex="25" flex-md="50" flex-sm="100" data-ng-repeat="employee in employees">
+      <!-- <div flex="25" flex-md="50" flex-sm="100" data-ng-repeat="employee in employees">
         <div class="card">
           <a data-ng-href="/#!/employees/{{employee._id}}">
             <div class="card__img card__img--top">
@@ -27,11 +27,75 @@
           </div>
         </div>
 
-      </div>
-    </div>
+      </div> -->
     <div class="alert alert-warning text-center" data-ng-hide="!employees.$resolved || employees.length">
       No Employees yet, why don't you <a href="/#!/employees/create">create one</a>?
     </div>
+
+
+
+    <div class="data-table-container ">
+      <div class="card">
+    <table class="data-table data-table--has-primary data-table--has-secondary">
+        <thead>
+            <tr>
+                <th></th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="4" class="divider divider--dark"></td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="data-table__clickable-row" data-ng-repeat="employee in employees">
+                <td><a data-ng-href="/#!/employees/{{employee._id}}">
+                    <img data-ng-src="{{employee.user.profileImageURL}}" alt="{{employee.user.displayName}}" width="40" height="40" class="img-round">
+                </td>
+                <td>
+                    <span data-ng-bind="employee.firstName"></span>
+                </td>
+                <td>
+                    <span data-ng-bind="employee.lastName"></span>
+                </td>
+                <td>
+                    <span data-ng-bind="employee.department"></span>
+                </td>
+                <td>
+                    <span data-ng-bind="employee.user.email"></span>
+                  </td></a>
+                <td>
+                    <lx-dropdown position="right" from-top>
+                        <button class="btn btn--l btn--black btn--icon" lx-ripple lx-dropdown-toggle>
+                            <i class="mdi mdi-dots-vertical"></i>
+                        </button>
+
+                        <lx-dropdown-menu>
+                            <ul>
+                                <li><a class="dropdown-link">Action</a></li>
+                                <li><a class="dropdown-link">Another action</a></li>
+                                <li><a class="dropdown-link">Something else here</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a class="dropdown-link dropdown-link--is-header">Header</a></li>
+                                <li><a class="dropdown-link">Separated link</a></li>
+                            </ul>
+                        </lx-dropdown-menu>
+                    </lx-dropdown>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+
   </section>
 
 </div>
