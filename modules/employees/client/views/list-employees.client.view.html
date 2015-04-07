@@ -101,8 +101,102 @@
 </div>
 
 
-<div class="fab fab--btn__responsive">
-  <button type="submit" class="btn btn--xl btn--default btn--fab" lx-ripple lx-tooltip="Add" tooltip-position="left">
+<div class="fab fab--btn__responsive" data-ng-controller="EmployeesController">
+  <lx-dialog class="dialog dialog--l" id="new-employee" onclose="closingDialog()">
+    <div class="dialog__header">
+        <div class="toolbar bgc-light-blue-500 pl++">
+            <span class="toolbar__label tc-white fs-title">
+                Lorem Ipsum
+            </span>
+
+
+        </div>
+    </div>
+
+    <div class="dialog__content">
+
+
+      <section >
+          <div class="page-header">
+          </div>
+          <div class="col-md-12">
+              <form class="form-horizontal" data-ng-submit="create()" novalidate>
+                  <!-- <fieldset>
+                      <div class="form-group">
+                          <label class="control-label" for="name">Name</label>
+                          <div class="controls">
+                              <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <input type="submit" class="btn btn-default">
+                      </div>
+      				<div data-ng-show="error" class="text-danger">
+      					<strong data-ng-bind="error"></strong>
+      				</div>
+                  </fieldset> -->
+
+              </form>
+
+
+              <div class="mt++" flex-container="row" >
+                  <div flex-item>
+                      <form>
+                          <lx-text-field label="First and last name" fixed-label="true" icon="account">
+                              <input type="text" >
+                          </lx-text-field>
+
+                          <lx-text-field label="Phone number" fixed-label="true" icon="phone">
+                              <input type="text" >
+                          </lx-text-field>
+
+                          <lx-text-field label="Email address" fixed-label="true" icon="email">
+                              <input type="email" >
+                          </lx-text-field>
+
+                          <lx-text-field label="Location" fixed-label="true" icon="city">
+                              <input type="text">
+                          </lx-text-field>
+                      </form>
+                  </div>
+
+                  <div flex-item>
+                      <form>
+                          <lx-text-field label="First name" fixed-label="true">
+                              <input type="text">
+                          </lx-text-field>
+
+                          <lx-text-field label="Last name" fixed-label="true">
+                              <input type="text">
+                          </lx-text-field>
+
+                          <lx-text-field label="Email" fixed-label="true">
+                              <input type="email">
+                          </lx-text-field>
+
+                          <lx-text-field label="Address" fixed-label="true">
+                              <input type="text">
+                          </lx-text-field>
+                      </form>
+                  </div>
+
+
+              </div>
+
+
+
+
+      </section>
+
+    </div>
+
+    <div class="dialog__actions">
+        <button class="btn btn--m btn--black btn--flat" lx-ripple lx-dialog-close>Cancel</button>
+        <button class="btn btn--m btn--black btn--flat" lx-ripple ng-click="create()">OK</button>
+    </div>
+</lx-dialog>
+
+  <button type="submit" class="btn btn--xl btn--default btn--fab" lx-ripple lx-tooltip="Add" tooltip-position="left" ng-click="opendDialog('new-employee')">
     <i class="mdi mdi-pencil"></i>
   </button>
 </div>

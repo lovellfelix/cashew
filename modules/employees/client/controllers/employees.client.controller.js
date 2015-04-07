@@ -3,8 +3,8 @@
 // Employees controller
 var app = angular.module('employees');
 
-app.controller('EmployeesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Employees',
-	function($scope, $stateParams, $location, Authentication, Employees ) {
+app.controller('EmployeesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Employees',  'LxNotificationService', 'LxDialogService',
+	function($scope, $stateParams, $location, Authentication, Employees, LxNotificationService, LxDialogService ) {
 		$scope.authentication = Authentication;
 
 		// Create new Employee
@@ -75,6 +75,16 @@ app.controller('EmployeesController', ['$scope', '$stateParams', '$location', 'A
 		      }
 		    }
 		  }
+		};
+
+		$scope.alert = function() {
+			LxNotificationService.alert('Arawak', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet urna quis nisi sodales semper pharetra eu augue.', 'Ok', function(answer) {
+				// console.log(answer);
+			});
+		};
+
+		$scope.opendDialog = function(dialogId) {
+			LxDialogService.open(dialogId);
 		};
 
 

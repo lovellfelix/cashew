@@ -6,7 +6,7 @@ app.run(['Menus',
 	function(Menus) {
 		// Add the Employees dropdown item
 		Menus.addMenuItem('topbar', {
-			title: 'Employees',
+			title: 'Directory',
 			state: 'employees.list',
 			icon: 'account-multiple',
 			type: 'dropdown'
