@@ -20,8 +20,8 @@ module.exports = function(app, db) {
 
     // Create a MongoDB storage object
     var mongoStore = new MongoStore({
-        db: db.connection.db,
-        collection: config.sessionCollection
+			mongooseConnection: db.connection,
+			collection: config.sessionCollection
     });
 
     // Intercept Socket.io's handshake request
