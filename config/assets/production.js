@@ -6,7 +6,7 @@ module.exports = {
 			css: [
 				'public/lib/angular-material/angular-material.min.css',
 				'public/lib/mdi/css/materialdesignicons.min.css',
-==      'public/lib/angular-xeditable/dist/css/xeditable.css',
+        'public/lib/angular-xeditable/dist/css/xeditable.css',
 				'public/lib/lumx/dist/lumx.css'
 			],
 			js: [
