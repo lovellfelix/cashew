@@ -5,7 +5,7 @@
 /* IMPORT CSS FILES */
 body {
   background: #FFFFFF;
-  font-family: 'Roboto Condensed', sans-serif; }
+  font-family: "Roboto Condensed", sans-serif; }
 
 .content {
   margin-top: 50px; }
@@ -99,11 +99,9 @@ body {
 @media screen and (max-width: 480px) {
   .main-nav--lap-and-up {
     display: none; } }
-
 @media screen and (min-width: 481px) {
   .main-nav--palm {
     display: none; } }
-
 .main-nav__link {
   display: block;
   padding: 0 12px;
@@ -119,7 +117,6 @@ body {
   .main-nav__link {
     font-size: 14px;
     font-size: 0.875rem; } }
-
 .dropdown-link {
   min-width: 140px; }
 
@@ -153,3 +150,5 @@ md-toolbar {
 
 .bgc-toolbar__primary {
   background-color: #00B8D4 !important; }
+
+/*# sourceMappingURL=style.css.map */
