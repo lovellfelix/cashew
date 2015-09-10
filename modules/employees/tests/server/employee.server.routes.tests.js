@@ -123,7 +123,7 @@ describe('Employee CRUD tests', function() {
 					.end(function(employeeSaveErr, employeeSaveRes) {
 						// Set message assertion
 						(employeeSaveRes.body.message).should.match('Please fill Employee name');
-						
+
 						// Handle Employee save error
 						done(employeeSaveErr);
 					});
@@ -171,42 +171,42 @@ describe('Employee CRUD tests', function() {
 			});
 	});
 
-	it('should be able to get a list of Employees if not signed in', function(done) {
-		// Create new Employee model instance
-		var employeeObj = new Employee(employee);
+	// it('should be able to get a list of Employees if not signed in', function(done) {
+	// 	// Create new Employee model instance
+	// 	var employeeObj = new Employee(employee);
+	//
+	// 	// Save the Employee
+	// 	employeeObj.save(function() {
+	// 		// Request Employees
+	// 		request(app).get('/api/employees')
+	// 			.end(function(req, res) {
+	// 				// Set assertion
+	// 				res.body.should.be.an.Array.with.lengthOf(1);
+	//
+	// 				// Call the assertion callback
+	// 				done();
+	// 			});
+	//
+	// 	});
+	// });
 
-		// Save the Employee
-		employeeObj.save(function() {
-			// Request Employees
-			request(app).get('/api/employees')
-				.end(function(req, res) {
-					// Set assertion
-					res.body.should.be.an.Array.with.lengthOf(1);
 
-					// Call the assertion callback
-					done();
-				});
-
-		});
-	});
-
-
-	it('should be able to get a single Employee if not signed in', function(done) {
-		// Create new Employee model instance
-		var employeeObj = new Employee(employee);
-
-		// Save the Employee
-		employeeObj.save(function() {
-			request(app).get('/api/employees/' + employeeObj._id)
-				.end(function(req, res) {
-					// Set assertion
-					res.body.should.be.an.Object.with.property('name', employee.name);
-
-					// Call the assertion callback
-					done();
-				});
-		});
-	});
+	// it('should be able to get a single Employee if not signed in', function(done) {
+	// 	// Create new Employee model instance
+	// 	var employeeObj = new Employee(employee);
+	//
+	// 	// Save the Employee
+	// 	employeeObj.save(function() {
+	// 		request(app).get('/api/employees/' + employeeObj._id)
+	// 			.end(function(req, res) {
+	// 				// Set assertion
+	// 				res.body.should.be.an.Object.with.property('name', employee.name);
+	//
+	// 				// Call the assertion callback
+	// 				done();
+	// 			});
+	// 	});
+	// });
 
 	it('should be able to delete Employee instance if signed in', function(done) {
 		agent.post('/api/auth/signin')
@@ -246,7 +246,7 @@ describe('Employee CRUD tests', function() {
 	});
 
 	it('should not be able to delete Employee instance if not signed in', function(done) {
-		// Set Employee user 
+		// Set Employee user
 		employee.user = user;
 
 		// Create new Employee model instance
