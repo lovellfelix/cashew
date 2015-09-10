@@ -1,4 +1,4 @@
-<div data-ng-controller="AuthenticationController">
+<div ng-controller="AuthenticationController">
 
 <div class="mt+++" flex-container="row" flex-gutter="24">
   <div class="login">
@@ -10,41 +10,18 @@
     <div class="photo">
     </div>
     <span>Sign in with your Arawak Account</span>
-    <form data-ng-submit="signin()" autocomplete="off">
-
+      <form name="userForm" ng-submit="signin(userForm.$valid)" novalidate autocomplete="off">
       <lx-text-field label="Username">
-        <input required type="text" data-ng-model="credentials.username">
+        <input type="text"  ng-model="credentials.username" lowercase required>
       </lx-text-field>
 
       <lx-text-field label="Password">
-        <input required id="password_block" name="password" type="password" data-ng-model="credentials.password">
+        <input type="password" class="form-control" ng-model="credentials.password" required>
       </lx-text-field>
 
       <button type="submit" class="btn btn--s btn--blue btn--raised" lx-ripple>Login</button>
-
+      <alert type="danger" ng-show="error" class="text-center text-danger">
+        <span ng-bind="error"></span>
+      </alert>
     </form>
   </div>
-
-
-    <!-- <div flex-item="24" >
-
-      <form data-ng-submit="signin()" autocomplete="off">
-
-        <lx-text-field label="Username">
-          <input required type="text" data-ng-model="credentials.username">
-        </lx-text-field>
-
-        <lx-text-field label="Password">
-          <input required id="password_block" name="password" type="password" data-ng-model="credentials.password">
-        </lx-text-field>
-
-        <button type="submit" class="btn btn--m btn--blue btn--raised" lx-ripple>Login</button>
-
-      </form>
-      <br />
-      <!-- <span><a data-ui-sref='authentication.signup'>Create an account</a>
-      </span> | -->
-      <!-- <span><a data-ui-sref='password.forgot'>Forgot your password</a>
-      </span>
-    </div> -->
-</div>

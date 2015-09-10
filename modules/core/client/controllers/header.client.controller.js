@@ -13,7 +13,7 @@ app.controller('HeaderController', ['$scope', '$state', '$mdSidenav', 'Authentic
 
     // Toggle the menu items
     $scope.isCollapsed = false;
-    $scope.toggleCollapsibleMenu = function() {
+    $scope.toggleCollapsibleMenu = function () {
       $scope.isCollapsed = !$scope.isCollapsed;
     };
 

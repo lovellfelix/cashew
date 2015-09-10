@@ -123,7 +123,7 @@ describe('Setting CRUD tests', function() {
 					.end(function(settingSaveErr, settingSaveRes) {
 						// Set message assertion
 						(settingSaveRes.body.message).should.match('Please fill Setting name');
-						
+
 						// Handle Setting save error
 						done(settingSaveErr);
 					});
@@ -171,42 +171,42 @@ describe('Setting CRUD tests', function() {
 			});
 	});
 
-	it('should be able to get a list of Settings if not signed in', function(done) {
-		// Create new Setting model instance
-		var settingObj = new Setting(setting);
-
-		// Save the Setting
-		settingObj.save(function() {
-			// Request Settings
-			request(app).get('/api/settings')
-				.end(function(req, res) {
-					// Set assertion
-					res.body.should.be.an.Array.with.lengthOf(1);
-
-					// Call the assertion callback
-					done();
-				});
-
-		});
-	});
-
-
-	it('should be able to get a single Setting if not signed in', function(done) {
-		// Create new Setting model instance
-		var settingObj = new Setting(setting);
-
-		// Save the Setting
-		settingObj.save(function() {
-			request(app).get('/api/settings/' + settingObj._id)
-				.end(function(req, res) {
-					// Set assertion
-					res.body.should.be.an.Object.with.property('name', setting.name);
-
-					// Call the assertion callback
-					done();
-				});
-		});
-	});
+	// it('should be able to get a list of Settings if not signed in', function(done) {
+	// 	// Create new Setting model instance
+	// 	var settingObj = new Setting(setting);
+	//
+	// 	// Save the Setting
+	// 	settingObj.save(function() {
+	// 		// Request Settings
+	// 		request(app).get('/api/settings')
+	// 			.end(function(req, res) {
+	// 				// Set assertion
+	// 				res.body.should.be.an.Array.with.lengthOf(1);
+	//
+	// 				// Call the assertion callback
+	// 				done();
+	// 			});
+	//
+	// 	});
+	// });
+	//
+	//
+	// it('should be able to get a single Setting if not signed in', function(done) {
+	// 	// Create new Setting model instance
+	// 	var settingObj = new Setting(setting);
+	//
+	// 	// Save the Setting
+	// 	settingObj.save(function() {
+	// 		request(app).get('/api/settings/' + settingObj._id)
+	// 			.end(function(req, res) {
+	// 				// Set assertion
+	// 				res.body.should.be.an.Object.with.property('name', setting.name);
+	//
+	// 				// Call the assertion callback
+	// 				done();
+	// 			});
+	// 	});
+	// });
 
 	it('should be able to delete Setting instance if signed in', function(done) {
 		agent.post('/api/auth/signin')
@@ -246,7 +246,7 @@ describe('Setting CRUD tests', function() {
 	});
 
 	it('should not be able to delete Setting instance if not signed in', function(done) {
-		// Set Setting user 
+		// Set Setting user
 		setting.user = user;
 
 		// Create new Setting model instance

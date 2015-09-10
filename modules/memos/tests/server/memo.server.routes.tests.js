@@ -123,7 +123,7 @@ describe('Memo CRUD tests', function() {
 					.end(function(memoSaveErr, memoSaveRes) {
 						// Set message assertion
 						(memoSaveRes.body.message).should.match('Please fill Memo name');
-						
+
 						// Handle Memo save error
 						done(memoSaveErr);
 					});
@@ -171,42 +171,42 @@ describe('Memo CRUD tests', function() {
 			});
 	});
 
-	it('should be able to get a list of Memos if not signed in', function(done) {
-		// Create new Memo model instance
-		var memoObj = new Memo(memo);
-
-		// Save the Memo
-		memoObj.save(function() {
-			// Request Memos
-			request(app).get('/api/memos')
-				.end(function(req, res) {
-					// Set assertion
-					res.body.should.be.an.Array.with.lengthOf(1);
-
-					// Call the assertion callback
-					done();
-				});
-
-		});
-	});
-
-
-	it('should be able to get a single Memo if not signed in', function(done) {
-		// Create new Memo model instance
-		var memoObj = new Memo(memo);
-
-		// Save the Memo
-		memoObj.save(function() {
-			request(app).get('/api/memos/' + memoObj._id)
-				.end(function(req, res) {
-					// Set assertion
-					res.body.should.be.an.Object.with.property('name', memo.name);
-
-					// Call the assertion callback
-					done();
-				});
-		});
-	});
+	// it('should be able to get a list of Memos if not signed in', function(done) {
+	// 	// Create new Memo model instance
+	// 	var memoObj = new Memo(memo);
+	//
+	// 	// Save the Memo
+	// 	memoObj.save(function() {
+	// 		// Request Memos
+	// 		request(app).get('/api/memos')
+	// 			.end(function(req, res) {
+	// 				// Set assertion
+	// 				res.body.should.be.an.Array.with.lengthOf(1);
+	//
+	// 				// Call the assertion callback
+	// 				done();
+	// 			});
+	//
+	// 	});
+	// });
+	//
+	//
+	// it('should be able to get a single Memo if not signed in', function(done) {
+	// 	// Create new Memo model instance
+	// 	var memoObj = new Memo(memo);
+	//
+	// 	// Save the Memo
+	// 	memoObj.save(function() {
+	// 		request(app).get('/api/memos/' + memoObj._id)
+	// 			.end(function(req, res) {
+	// 				// Set assertion
+	// 				res.body.should.be.an.Object.with.property('name', memo.name);
+	//
+	// 				// Call the assertion callback
+	// 				done();
+	// 			});
+	// 	});
+	// });
 
 	it('should be able to delete Memo instance if signed in', function(done) {
 		agent.post('/api/auth/signin')
@@ -246,7 +246,7 @@ describe('Memo CRUD tests', function() {
 	});
 
 	it('should not be able to delete Memo instance if not signed in', function(done) {
-		// Set Memo user 
+		// Set Memo user
 		memo.user = user;
 
 		// Create new Memo model instance
